@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Colle",
+				"CollectionInterface"
+			],
+			[
 				"fala",
 				"falha_webservice"
 			],
@@ -510,10 +514,6 @@
 			[
 				"__con",
 				"__construct〔function〕"
-			],
-			[
-				"Wallace",
-				"WallaceMaxters\\Itertools\\Range〔class〕"
 			]
 		]
 	},
@@ -523,23 +523,51 @@
 			"file": "src/Collection.php",
 			"settings":
 			{
-				"buffer_size": 39,
+				"buffer_size": 3553,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n\n",
-			"file": "src/CollectionInterface.php",
-			"file_size": 0,
-			"file_write_time": 131037410850610835,
+			"file": "src/exceptions/TypedCollectionException.php",
 			"settings":
 			{
-				"buffer_size": 7,
+				"buffer_size": 120,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "composer.json",
+			"file": "src/contracts/TypedCollectionInterface.php",
+			"settings":
+			{
+				"buffer_size": 361,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/contracts/ArrayableInterface.php",
+			"settings":
+			{
+				"buffer_size": 113,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "phpunit.xml",
+			"settings":
+			{
+				"buffer_size": 27,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/TypedCollection.php",
+			"settings":
+			{
+				"buffer_size": 1436,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"settings":
 			{
 				"buffer_size": 0,
@@ -1407,11 +1435,18 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/packages/collections",
-		"/var/www/packages/collections/src"
+		"/var/www/packages/collections"
 	],
 	"file_history":
 	[
+		"/var/www/packages/collections/src/contracts/TypedCollectionInterface.php",
+		"/var/www/packages/collections/src/exceptions/CollectionException.php",
+		"/var/www/packages/collections/src/TypedCollection.php",
+		"/var/www/packages/collections/src/exceptions/TypedCollectionException.php",
+		"/var/www/packages/collections/src/contracts/ArrayableInterface.php",
+		"/var/www/packages/collections/src/contracts/FilterInterface.php",
+		"/var/www/packages/collections/src/contracts/MathCollectionInterface.php",
+		"/var/www/packages/collections/src/contracts/CollectionInterface.php",
 		"/home/wallace/Área de Trabalho/senha",
 		"/var/www/unibh/app/controllers/RemessaController.php",
 		"/var/www/unibh/app/controllers/SolicitacaoController.php",
@@ -1531,15 +1566,7 @@
 		"/var/www/unibh/vendor/barryvdh/laravel-dompdf/src/config/config.php",
 		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Foundation/Console/DownCommand.php",
 		"/var/www/unibh/vendor/barryvdh/laravel-dompdf/src/PDF.php",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php",
-		"/var/www/unibh/app/config/auth.php",
-		"/var/www/unibh/public/js/remessa/pesquisar.js",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Routing/Redirector.php",
-		"/var/www/unibh/public/css/remessa/producao_baixar_carga.css",
-		"/var/www/unibh/public/js/remessa/producao_baixar_carga.js",
-		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Container/Container.php",
-		"/var/www/unibh/artisan",
-		"/var/www/unibh/app/config/testing/database.php"
+		"/var/www/unibh/vendor/laravel/framework/src/Illuminate/Routing/UrlGenerator.php"
 	],
 	"find":
 	{
@@ -1607,6 +1634,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"set(",
+			"set",
 			"detalhes_tecnicos",
 			"dados_tecnicos",
 			"table",
@@ -1732,9 +1761,7 @@
 			"tmt",
 			"20",
 			"$button-color",
-			"button-color-default",
-			"reset",
-			"button-color-submit"
+			"button-color-default"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1781,7 +1808,7 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 4,
 			"sheets":
 			[
 				{
@@ -1790,20 +1817,106 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 39,
+						"buffer_size": 3553,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								39,
-								39
+								2947,
+								2947
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2268.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/exceptions/TypedCollectionException.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 120,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/contracts/TypedCollectionInterface.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 361,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								253,
+								253
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/contracts/ArrayableInterface.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 113,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
 							"syntax": "Packages/PHP/PHP.sublime-syntax"
 						},
 						"translation.x": 0.0,
@@ -1814,26 +1927,25 @@
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/CollectionInterface.php",
+					"buffer": 4,
+					"file": "phpunit.xml",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7,
+						"buffer_size": 27,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7,
-								7
+								24,
+								24
 							]
 						],
 						"settings":
 						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
+							"syntax": "Packages/XML/XML.sublime-syntax"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1843,8 +1955,38 @@
 					"type": "text"
 				},
 				{
-					"buffer": 2,
-					"file": "composer.json",
+					"buffer": 5,
+					"file": "src/TypedCollection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1436,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								239,
+								239
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1861,13 +2003,14 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/JavaScript/JSON.sublime-syntax"
+							"default_dir": "/var/www/packages/collections/src",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -2467,9 +2610,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "supp",
+		"last_filter": "suppor",
 		"selected_items":
 		[
+			[
+				"suppor",
+				"/var/www/packages/support/support.sublime-project"
+			],
+			[
+				"uni",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+			],
 			[
 				"supp",
 				"/var/www/packages/support/support.sublime-project"
@@ -2529,10 +2680,6 @@
 			[
 				"fiat",
 				"/var/www/fiat/fiat.sublime-project"
-			],
-			[
-				"uni",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
 				"un",

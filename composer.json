@@ -1,0 +1,18 @@
+{
+    "name": "phplegends/collections",
+    "type": "collection",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wallace de Souza Vizerra",
+            "email": "wallacemaxters@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload" : {
+        "psr-4" : {
+            "PHPLegends\\Collections\\" : "src/"
+        }
+    }
+}

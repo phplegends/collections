@@ -4,8 +4,7 @@ namespace PHPLegends\Collections;
 
 use PHPLegends\Collections\Contracts\ArrayableInterface;
 
-class Collection implements \ArrayAccess, \Countable,
-\IteratorAggregate, \JsonSerializable, ArrayableInterface
+class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonSerializable, ArrayableInterface
 {	
 
 	/**
