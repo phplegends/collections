@@ -4,7 +4,15 @@ namespace PHPLegends\Collections;
 
 use PHPLegends\Collections\Contracts\ArrayableInterface;
 
-class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonSerializable, ArrayableInterface
+/**
+* @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+**/
+class Collection implements 
+	ArrayableInterface,
+	\ArrayAccess,
+	\Countable,
+	\IteratorAggregate,
+	\JsonSerializable
 {	
 
 	/**
@@ -15,6 +23,11 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 	public function __construct(array $items = [])
 	{
 		$this->replace($items);
+	}
+
+	public static function create(array $items = [])
+	{
+		return new static($items);
 	}
 
 	/**
@@ -78,13 +91,16 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 	}
 
 	/**
+	* @param callable|null $callback
 	* @return array
 	*/
 	public function map(callable $callback = null)
 	{
-		$items = array_map($callback, $this->all(), array_keys($this->items));
+		$keys = array_keys($this->items);
 
-		return new static($items);
+		$items = array_map($callback, $this->items, $keys);
+
+		return new static(array_combine($keys, $items));
 	}
 
 	public function count()
@@ -167,7 +183,14 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 
 	public function offsetSet($key, $value)
 	{
-		$this->set($key, $value);
+		if ($key === null) {
+
+			return $this->add($value);
+
+		} else {
+
+			$this->set($key, $value);
+		}
 	}
 
 	public function offsetGet($key)
@@ -182,7 +205,7 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 
 	public function offsetUnset($key)
 	{
-		$this->remove($key);
+		$this->removeKey($key);
 	}
 
 	public function getIterator()
@@ -200,7 +223,12 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 		return isset($this->items[$key]);
 	}
 
-	public function remove($key)
+	/**
+	* Unset item from collection via index and return value
+	* @param int|string $key
+	* @return mixed
+	*/
+	public function removeKey($key)
 	{
 		$value = $this->get($key);
 
@@ -209,11 +237,45 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 		return $value;
 	}
 
+	/**
+	* Unset item from collection via value and return index
+	* @param mixed $value
+	* @return int|string
+	*/
+	public function remove($value)
+	{
+		$key = $this->search($value);
+
+		$this->removeKey($key);
+
+		return $key;
+	}
+
+	/**
+	* Retrieves all keys of collection 
+	* @return array
+	*/
+	public function keys()
+	{
+		return array_keys($this->items);
+	}
+
+	/**
+	* @param int|string $key
+	* @param mixed $value
+	* @return $this
+	*/
 	public function set($key, $value)
 	{
 		$this->items[$key] = $value;
+
+		return $this;
 	}
 
+	/**
+	* @param array $items
+	* @return $this
+	*/
 	public function replace(array $items)
 	{
 		$this->items = $items;
@@ -221,9 +283,41 @@ class Collection implements \ArrayAccess, \Countable, \IteratorAggregate, \JsonS
 		return $this;
 	}
 
+	/**
+	* @return array
+	*/
 	public function jsonSerialize()
 	{
 		return $this->toArray();
 	}
+
+    /**
+     * Gets the value of items.
+     *
+     * @return array
+     */
+    public function getItems()
+    {
+        return $this->items;
+    }
+
+    public function intersect(self $collection, $associative = false)
+    {
+    	$func = ($associative) ? 'array_intersect_assoc' : 'array_intersect';
+
+ 		return new static($func($this->all(), $collection->all()));
+    }
+
+    public function diff(self $collection, $associative = false)
+    {
+    	$func = ($associative) ? 'array_diff_assoc' : 'array_diff';
+
+ 		return new static($func($this->all(), $collection->all()));
+    }
+
+    public function reduce(callable $callback, $initial = null)
+    {
+    	return array_reduce($this->items, $callback, $initial);
+    }
 
 }
