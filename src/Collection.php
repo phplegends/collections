@@ -49,7 +49,7 @@ class Collection implements
 
 	public function merge(array $items)
 	{
-		foreach($items as $item) $this->add($item);
+		$this->items = array_merge($this->items, $items);
 
 		return $this;
 	}
@@ -96,9 +96,8 @@ class Collection implements
 	*/
 	public function map(callable $callback = null)
 	{
-		$keys = array_keys($this->items);
-
-		$items = array_map($callback, $this->items, $keys);
+		
+		$items = array_map($callback, $this->items, $keys = $this->keys());
 
 		return new static(array_combine($keys, $items));
 	}
@@ -291,16 +290,6 @@ class Collection implements
 		return $this->toArray();
 	}
 
-    /**
-     * Gets the value of items.
-     *
-     * @return array
-     */
-    public function getItems()
-    {
-        return $this->items;
-    }
-
     public function intersect(self $collection, $associative = false)
     {
     	$func = ($associative) ? 'array_intersect_assoc' : 'array_intersect';
@@ -319,5 +308,4 @@ class Collection implements
     {
     	return array_reduce($this->items, $callback, $initial);
     }
-
 }
