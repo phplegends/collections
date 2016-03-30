@@ -523,7 +523,23 @@
 			"file": ".gitignore",
 			"settings":
 			{
-				"buffer_size": 9,
+				"buffer_size": 7,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Collection.php",
+			"settings":
+			{
+				"buffer_size": 5279,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "test/CollectionTest.php",
+			"settings":
+			{
+				"buffer_size": 6676,
 				"line_ending": "Unix"
 			}
 		}
@@ -1763,7 +1779,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 1,
 			"sheets":
 			[
 				{
@@ -1772,15 +1788,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9,
+						"buffer_size": 7,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								0,
+								0
 							]
 						],
 						"settings":
@@ -1791,7 +1807,67 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Collection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5279,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2206,
+								2206
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1957.0,
+						"zoom_level": 1.0
+					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "test/CollectionTest.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6676,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2964,
+								2964
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 2824.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
@@ -1874,6 +1950,14 @@
 		"selected_items":
 		[
 			[
+				"collectte",
+				"test/CollectionTest.php"
+			],
+			[
+				"collec",
+				"src/Collection.php"
+			],
+			[
 				"",
 				".gitignore"
 			],
@@ -1916,10 +2000,6 @@
 			[
 				"illuminate/support/collection",
 				"unibh/vendor/laravel/framework/src/Illuminate/Support/Collection.php"
-			],
-			[
-				"collec",
-				"unibh/vendor/laravel/framework/src/Illuminate/Database/Eloquent/Collection.php"
 			],
 			[
 				"solici",
@@ -2380,10 +2460,6 @@
 			[
 				"route",
 				"unibh/app/routes.php"
-			],
-			[
-				"serverc",
-				"unibh/app/controllers/webservice/ServerController.php"
 			]
 		],
 		"width": 0.0
@@ -2391,9 +2467,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "unibh",
+		"last_filter": "una",
 		"selected_items":
 		[
+			[
+				"una",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+			],
+			[
+				"uni",
+				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
 			[
 				"unibh",
 				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
@@ -2403,16 +2487,8 @@
 				"/var/www/packages/support/support.sublime-project"
 			],
 			[
-				"uni",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
-			],
-			[
 				"supp",
 				"/var/www/packages/support/support.sublime-project"
-			],
-			[
-				"una",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
 				"unas",
