@@ -544,8 +544,8 @@ class Collection implements
     public function random($amount)
     {
         $keys = (array) array_rand($this->all(), $amount);
-
-
+        
+        return $this->only($keys);
     }
 
     /**
@@ -600,9 +600,5 @@ class Collection implements
         );
     }
 
-    public function entries()
-    {
-        
-    }
 
 }
