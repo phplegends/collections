@@ -9,7 +9,7 @@ class MixedCollection extends Collection
         $this->registryPair($key, $value);
     }
 
-    public function add($key)
+    public function add($value)
     {
         $key = $this->getNextAppendKey();
 
