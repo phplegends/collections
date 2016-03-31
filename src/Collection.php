@@ -8,327 +8,464 @@ use PHPLegends\Collections\Contracts\ArrayableInterface;
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 **/
 class Collection implements 
-	ArrayableInterface,
-	\ArrayAccess,
-	\Countable,
-	\IteratorAggregate,
-	\JsonSerializable
-{	
+    ArrayableInterface,
+    \ArrayAccess,
+    \Countable,
+    \IteratorAggregate,
+    \JsonSerializable
+{   
 
-	/**
-	* @var array
-	*/
-	protected $items = [];
+    /**
+    * @var array
+    */
+    protected $items = [];
 
-	public function __construct(array $items = [])
-	{
-		$this->replace($items);
-	}
+    public function __construct(array $items = [])
+    {
+       $items && $this->setItems($items);
+    }
 
-	public static function create(array $items = [])
-	{
-		return new static($items);
-	}
+    /**
+    * @param array $items
+    * @return $this
+    */
+    public function setItems(array $items)
+    {
+        $this->items = $items;
 
-	/**
-	* @param mixed $item
-	*/
-	public function add($item)
-	{
-		$this->items[] = $item;
+        return $this;
+    }
 
-		return $this;
-	}
+    /**
+    * Easy way to create the object statically without conflict with inheritances
+    * @uses func_get_args()
+    */
+    public static function create()
+    {
+        $reflect = new \ReflectionClass(get_called_class());
 
-	public function addAll(Collection $collection)
-	{
-		$this->merge($collection->all());
+        return $reflect->newInstanceArgs(func_get_args());
+    }
 
-		return $this;
-	}
+    /**
+    * @param mixed $item
+    */
+    public function add($item)
+    {
+        $this->items[] = $item;
 
-	public function merge(array $items)
-	{
-		$this->items = array_merge($this->items, $items);
+        return $this;
+    }
 
-		return $this;
-	}
+    /**
+    * @param Collection $collection
+    * @return $this
+    */
+    public function addAll(Collection $collection)
+    {
+        $this->merge($collection->all());
 
-	public function reverse()
-	{
-		return new static(array_reverse($this->items, true));
-	}
+        return $this;
+    }
 
-	public function last(callable $callback = null)
-	{
-		if (null === $callback)
-		{
-			return end($this->items);
-		}
+    /**
+    * @param array $items
+    * @param boolean $recursive
+    * @return $this
+    */
+    public function merge(array $items, $recursive = false)
+    {
 
-		foreach (array_reverse($this->all()) as $key => $value)
-		{
-			if ($callback($value, $key, $this)) return $value;
-		}
-	}
+        $func = ($recursive) ? 'array_merge_recursive' : 'array_merge';
 
-	public function first(callable $callback = null)
-	{
-		if (null === $callback)
-		{
-			return reset($this->items);
-		}
+        $this->setItems(
+            $func($this->items, $items)
+        );
 
-		foreach($this->all() as $key => $value)
-		{
-			if ($callback($value, $key, $this)) return $value;
-		}
-	}
+        return $this;
+    }
 
-	public function filter(callable $callback)
-	{
-		return new static(array_filter($this->all(), $callback));
-	}
+    /**
+    * @return Collection
+    */
+    public function reverse()
+    {
+        return $this->getInstance()->setItems(
+            array_reverse($this->items, true)
+        );
+    }
 
-	/**
-	* @param callable|null $callback
-	* @return array
-	*/
-	public function map(callable $callback = null)
-	{
-		$items = array_map($callback, $this->items, $keys = $this->keys());
+    /**
+    * @param callable|null $callback
+    * @return mixed
+    */
+    public function last(callable $callback = null)
+    {
+        if (null === $callback)
+        {
+            return end($this->items);
+        }
 
-		return new static(array_combine($keys, $items));
-	}
+        foreach ($this->reverse()->all() as $key => $value)
+        {
+            if ($callback($value, $key, $this)) return $value;
+        }
+    }
 
-	public function count()
-	{
-		return count($this->items);
-	}
+    /**
+    * @param callable|null $callback
+    * @return mixed
+    */
+    public function first(callable $callback = null)
+    {
+        if (null === $callback)
+        {
+            return reset($this->items);
+        }
 
-	/**
-	* @{inheritdoc}
-	*/
-	public function toArray()
-	{
-		$callback = function ($value) {
+        foreach($this->all() as $key => $value)
+        {
+            if ($callback($value, $key, $this)) return $value;
+        }
+    }
 
-			if ($value instanceof ArrayableInterface) {
+    /**
+    * @param callable|null $callback
+    * @return Collection
+    */
+    public function filter(callable $callback)
+    {
+        return $this->getInstance()->setItems(
+            array_filter($this->all(), $callback)
+        );
+    }
 
-				return $value->toArray();
-			}
+    /**
+    * @param callable|null $callback
+    * @return array
+    */
+    public function map(callable $callback = null)
+    {
+        $items = array_map(
+            $callback,
+            $this->all(),
+            $keys = $this->keys()
+        );
 
-			return $value;
+        return $this->getInstance()->setItems(
+            array_combine($keys, $items)
+        );
+    }
 
-		};
+    /**
+    * @return int
+    */
+    public function count()
+    {
+        return count($this->items);
+    }
 
-		return array_map($callback, $this->all());
-	}
+    /**
+    * @{inheritdoc}
+    */
+    public function toArray()
+    {
+        $callback = function ($value) {
 
-	public function sort(callable $callback = null)
-	{	
-		$items = $this->all();
+            if ($value instanceof ArrayableInterface) {
 
-		$callback ? uasort($items, $callback) : asort($items, SORT_REGULAR);
+                return $value->toArray();
+            }
 
-		return new static($items);
-	}
+            return $value;
 
-	public function sortBy(callable $callback, $ascending = true)
-	{
-		$results = $this->map($callback)->all();
+        };
 
-       	$ascending ? asort($results, SORT_REGULAR) : arsort($results, SORT_REGULAR);
+        return array_map($callback, $this->all());
+    }
+
+    /**
+    * @param callable|null $callback
+    * @return Collection
+    */
+    public function sort(callable $callback = null)
+    {   
+        $items = $this->all();
+
+        $callback ? uasort($items, $callback) : asort($items, SORT_REGULAR);
+
+        return $this->getInstance()->setItems(
+            $items
+        );
+    }
+
+    /**
+    * @param callable|null $callback
+    * @param boolean $ascending
+    * @return Collection
+    */
+    public function sortBy(callable $callback, $ascending = true)
+    {
+        $results = $this->map($callback)->all();
+
+        $ascending ? 
+            asort($results, SORT_REGULAR) : arsort($results, SORT_REGULAR);
        
-		foreach (array_keys($results) as $key) {
+        foreach (array_keys($results) as $key) {
 
-			$results[$key] = $this->items[$key];
-		}
-       	
-       	return new static($results);
-	}
+            $results[$key] = $this->items[$key];
+        }
+        
+        return $this->getInstance()->setItems($results);
+    }
 
-	public function sortByDesc(callable $callback)
-	{
-		return $this->sortBy($callback, false);
-	}
+    public function sortByDesc(callable $callback)
+    {
+        return $this->sortBy($callback, false);
+    }
 
-	/**
-	* Remove last item of collection
-	* @return mixed
-	*/
-	public function pop()
-	{
-		return array_pop($this->items);
-	}
+    /**
+    * Remove last item of collection
+    * @return mixed
+    */
+    public function pop()
+    {
+        return array_pop($this->items);
+    }
 
-	/**
-	* Add an item in first position of collection
-	* @param mixed $item
-	*/
-	public function unshift($item)
-	{
-		array_unshift($this->items, $item);
+    /**
+    * Add an item in first position of collection
+    * @param mixed $item
+    */
+    public function unshift($item)
+    {
+        array_unshift($this->items, $item);
 
-		return $this;
-	}
+        return $this;
+    }
 
-	public function contains($value)
-	{
-		return in_array($value, $this->all(), true);
-	}
+    /**
+    * @return mixed
+    */
 
-	public function search($value)
-	{
-		return array_search($value, $this->items, true);
-	}
+    public function shift()
+    {
+        return array_shift($this->items);
+    }
 
-	public function isEmpty()
-	{
-		return empty($this->items);
-	}
+    /**
+    * @param mixed $value
+    * @return boolean
+    */
+    public function contains($value)
+    {
+        return in_array($value, $this->all(), true);
+    }
 
-	public function all()
-	{
-		return $this->items;
-	}
+    /**
+    * @param mixed $value
+    * @return int|string
+    */
+    public function search($value)
+    {
+        return array_search($value, $this->items, true);
+    }
 
-	public function values()
-	{
-		return array_values($this->all());
-	}
+    /**
+    * Is empty?
+    * @return boolean
+    */
+    public function isEmpty()
+    {
+        return empty($this->items);
+    }
 
-	public function offsetSet($key, $value)
-	{
-		if ($key === null) {
+    /**
+    * @return array
+    */
+    public function all()
+    {
+        return $this->items;
+    }
 
-			return $this->add($value);
+    /**
+    * Returns all values in an array with "reseted" keys
+    * @return array
+    */
+    public function values()
+    {
+        return array_values($this->all());
+    }
 
-		} else {
+    /**
+    * Force the all values of collection as list
+    * @return Collection
+    */
+    public function toList()
+    {
+        return $this->getInstance()->setItems($this->values());
+    }
 
-			$this->set($key, $value);
-		}
-	}
 
-	public function offsetGet($key)
-	{
-		return $this->get($key);
-	}
+    /**
+    * @param string|int $key
+    * @param mixed $value
+    * @return mixed
+    */
+    public function offsetSet($key, $value)
+    {
+        if ($key === null) {
 
-	public function offsetExists($key)
-	{
-		return $this->has($key);
-	}
+            return $this->add($value);
 
-	public function offsetUnset($key)
-	{
-		$this->removeKey($key);
-	}
+        } else {
 
-	public function getIterator()
-	{
-		return new \ArrayIterator($this->all());
-	}
+            $this->set($key, $value);
+        }
+    }
 
-	public function get($key, $default = null)
-	{
-		return $this->has($key) ? $this->items[$key] : $default;
-	}
+    /**
+    * @param string|int $key
+    * @return mixed
+    */
 
-	public function has($key)
-	{
-		return isset($this->items[$key]);
-	}
+    public function offsetGet($key)
+    {
+        return $this->get($key);
+    }
 
-	/**
-	* Unset item from collection via index and return value
-	* @param int|string $key
-	* @return mixed
-	*/
-	public function removeKey($key)
-	{
-		$value = $this->get($key);
+    /**
+    * @param string|int $key
+    * @return boolean
+    */
+    public function offsetExists($key)
+    {
+        return $this->has($key);
+    }
 
-		unset($this->items[$key]);
+    /**
+    * @param string|int $key
+    * @return void
+    */
+    public function offsetUnset($key)
+    {
+        $this->removeKey($key);
+    }
 
-		return $value;
-	}
+    /**
+    * 
+    * @return \ArrayIterator
+    */
+    public function getIterator()
+    {
+        return new \ArrayIterator($this->all());
+    }
 
-	/**
-	* Unset item from collection via value and return index
-	* @param mixed $value
-	* @return int|string
-	*/
-	public function remove($value)
-	{
-		$key = $this->search($value);
+    /**
+    * @param string|int $key
+    * @param null|mixed $default
+    * @return mixed
+    */
+    public function get($key, $default = null)
+    {
+        return $this->has($key) ? $this->items[$key] : $default;
+    }
 
-		$this->removeKey($key);
+    /**
+    * @return boolean
+    */
+    public function has($key)
+    {
+        return isset($this->items[$key]);
+    }
 
-		return $key;
-	}
+    /**
+    * Unset item from collection via index and return value
+    * @param int|string $key
+    * @return mixed
+    */
+    public function removeKey($key)
+    {
 
-	/**
-	* Retrieves all keys of collection 
-	* @return array
-	*/
-	public function keys()
-	{
-		return array_keys($this->items);
-	}
+        if (! $this->has($key)) return null;
 
-	/**
-	* @param int|string $key
-	* @param mixed $value
-	* @return $this
-	*/
-	public function set($key, $value)
-	{
-		$this->items[$key] = $value;
+        $value = $this->items[$key];
 
-		return $this;
-	}
+        unset($this->items[$key]);
 
-	/**
-	* @param array $items
-	* @return $this
-	*/
-	public function replace(array $items)
-	{
-		$this->items = $items;
+        return $value;
+    }
 
-		return $this;
-	}
+    /**
+    * Unset item from collection via value and return index
+    * @param mixed $value
+    * @return int|string
+    */
+    public function remove($value)
+    {
+        $key = $this->search($value);
 
-	/**
-	* @return array
-	*/
-	public function jsonSerialize()
-	{
-		return $this->toArray();
-	}
+        if ($key === false) return null;
 
-	/**
-	* @param \PHPLegends\Collections\Collection $collection
-	* @param boolean $associative 
-	*/
+        $this->removeKey($key);
+
+        return $key;
+    }
+
+    /**
+    * Retrieves all keys of collection 
+    * @return array
+    */
+    public function keys()
+    {
+        return array_keys($this->items);
+    }
+
+    /**
+    * @param int|string $key
+    * @param mixed $value
+    * @return $this
+    */
+    public function set($key, $value)
+    {
+        $this->items[$key] = $value;
+
+        return $this;
+    }
+
+    /**
+    * @return array
+    */
+    public function jsonSerialize()
+    {
+        return $this->toArray();
+    }
+
+    /**
+    * @param \PHPLegends\Collections\Collection $collection
+    * @param boolean $associative 
+    */
     public function intersect(self $collection, $associative = false)
     {
-    	$func = ($associative) ? 'array_intersect_assoc' : 'array_intersect';
+        $func = ($associative) ? 'array_intersect_assoc' : 'array_intersect';
 
- 		return new static($func($this->all(), $collection->all()));
+        $items = $func($this->all(), $collection->all());
+
+        return $this->getInstance()->setItems($items);
     }
 
 
     /**
     * @param \PHPLegends\Collections\Collection $collection
-	* @param boolean $associative 
+    * @param boolean $assoc 
     **/
-    public function diff(self $collection, $associative = false)
+    public function diff(self $collection, $assoc = false)
     {
-    	$func = ($associative) ? 'array_diff_assoc' : 'array_diff';
+        $func = ($assoc) ? 'array_diff_assoc' : 'array_diff';
 
- 		return new static($func($this->all(), $collection->all()));
+        $items = $func($this->all(), $collection->all());
+
+        return $this->getInstance()->setItems($items);
     }
 
     /**
@@ -338,8 +475,134 @@ class Collection implements
     */
     public function reduce(callable $callback, $initial = null)
     {
-    	return array_reduce($this->items, $callback, $initial);
+        return array_reduce($this->all(), $callback, $initial);
     }
 
+    /**
+    * @param int $size
+    * @return Collection
+    */
+    public function chunk($size, $preserveKeys = true)
+    {
+        $chunks = $this->getInstance();
+
+        foreach(array_chunk($this->all(), $size, $preserveKeys) as $chunk)
+        {
+            $chunks->add(
+                $this->getInstance()->setItems($chunk)
+            );
+        }
+
+        return $chunks;
+    }
+
+    /**
+    * @return $this
+    */
+    public function clear()
+    {
+        return $this->setItems([]);
+    }
+
+    /**
+    * Create a new empty collection (used in immutable returns)
+    */
+    protected function getInstance()
+    {
+        return new static();
+    }
+
+    /**
+    * @param array $items
+    * @param boolean $recursive
+    * @return $this
+    */
+    public function replace(array $items, $recursive = false)
+    {
+
+        $func = ($recursive) ? 'array_replace_recursive': 'array_replace';
+
+        $this->setItems(
+            $func($this->items, $items)
+        );
+
+        return $this;
+    }
+
+    /**
+    * @return Collection
+    */
+    public function shuffle()
+    {
+        $items = $this->all();
+
+        shuffle($items);
+
+        return $this->getInstance()->setItems($items);
+    }
+
+    public function random($amount)
+    {
+        $keys = (array) array_rand($this->all(), $amount);
+
+
+    }
+
+    /**
+    * @return mixed
+    */
+    public function randomItem()
+    {
+        $key = array_rand($this->all());
+
+        return $this->get($key, null);
+    }
+
+    public function only(array $keys)
+    {
+        $items = array_intersect_key($this->all(), array_flip($keys));
+
+        return $this->getInstance()->setItems($items);
+    }
+
+    public function except(array $keys)
+    {
+        $items = array_diff_key($this->all(), array_flip($keys));
+
+        return $this->getInstance()->setItems($items);
+    }
+
+    /**
+    * Check if all elements return true in test of callback
+    * @param callable $callback - The callback must return the boolean type
+    * @return boolean
+    */
+    public function every(callable $callback)
+    {
+        return ! in_array(
+            false,
+            array_map($callback, $this->all(), $this->keys()), 
+            true
+        );
+    }
+
+    /**
+    * Some value returns true.
+    * @param callable $callback - The callback must return the boolean type
+    * @return boolean
+    */
+    public function some(callable $callback)
+    {
+        return in_array(
+            true,
+            array_map($callback, $this->all(), $this->keys()),
+            true
+        );
+    }
+
+    public function entries()
+    {
+        
+    }
 
 }

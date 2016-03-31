@@ -356,13 +356,36 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
 	public function testReplace()
 	{
-		$c = new Collection(['a', 'b', 'c']);
+		$c = new Collection(['a' => 'a', 'b' => 'b', 'c' => 'c']);
 
-		$c->replace([]);
+		$values = $c->replace(['a' => 'A', 'd' => 'D'])->all();
 
-		$this->assertCount(0, $c);
+		$this->assertEquals([
+				'a' => 'A',
+				'b' => 'b',
+				'c' => 'c',
+				'd' => 'D'
+			],
+			$values
+		);
 
-		$this->assertEquals([], $c->all());
+		$recursiveReplaces = Collection::create([
+			'languages' => [ 0 => 'PHP', 1 => 'Javascript', 2 => 'Python']
+		])
+		->replace(['languages' => [0 => 'PHP-5', 3 => 'NodeJS']], TRUE)
+		->all();
+
+		$this->assertEquals(
+			[
+				'languages' => [
+					0 => 'PHP-5',
+					1 => 'Javascript',
+					2 => 'Python',
+					3 => 'NodeJS',
+				]
+			],
+			$recursiveReplaces
+		);
 	}
 
 	public function testJsonSerialize()
@@ -484,6 +507,153 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 		);
 
 	}
+
+	public function testChunk()
+	{
+		$c = new Collection([
+			1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+		]);
+
+		$chunk = $c->chunk(3, false);
+
+		$this->assertInstanceOf(
+			'\PHPLegends\Collections\Collection',
+			$chunk->first()
+		);
+
+		$this->assertEquals(
+			[
+				[1, 2, 3],
+				[4, 5, 6],
+				[7, 8, 9],
+				[10, 11, 12]
+			],
+
+			$chunk->toArray()
+		);
+
+	}
+
+	public function testChunkPreserveKeys()
+	{
+		$c = new Collection([
+			'A' => 1,
+			'B' => 2,
+			'C' => 3,
+			'D' => 4,
+			'E' => 5,
+			'F' => 6,
+			'G' => 7
+		]);
+
+		$chunk = $c->chunk(3);
+
+		$this->assertEquals(
+			[
+				0 => [
+					'A' => 1, 
+					'B' => 2,
+					'C' => 3
+				],
+				1 => [
+					'D' => 4,
+					'E' => 5,
+					'F' => 6
+				],
+				2 => [
+					'G' => 7
+				]
+			],
+			$chunk->toArray()
+		);
+	}
+
+	public function testRemoveKey()
+	{
+		$c = new Collection();
+
+		$c['nome']  = 'Wallace';
+		$c['idade'] = 26;
+		$c['email'] = 'wallacemaxters@gmail.com';
+
+		$this->assertTrue($c->has('email'));
+
+		$email = $c->removeKey('email');
+
+		$this->assertEquals(
+			'wallacemaxters@gmail.com',
+			$email
+		);
+
+		$this->assertCount(2, $c);
+
+		$this->assertFalse($c->has('email'));
+
+		$this->assertFalse(isset($c['email']));
+
+	}
+
+	public function testRemoveValue()
+	{
+		$c = new Collection();
+
+		$c['nome']  = 'Wallace';
+		$c['idade'] = 26;
+		$c['email'] = 'wallacemaxters@gmail.com';
+
+		$this->assertTrue(
+			$c->contains('wallacemaxters@gmail.com')
+		);
+
+		$key = $c->remove('wallacemaxters@gmail.com');
+
+		$this->assertEquals(
+			'email', $key
+		);
+
+		// Where not exists, returns null
+
+		$this->assertNull($c->remove('Non-Exists'));
+	}
+
+
+	public function testKeys()
+	{
+
+		$c = new Collection(['a' => 1, 'b' => 2]);
+
+		$this->assertEquals(['a', 'b'], $c->keys());
+	}
+
+	public function testDiff()
+	{
+
+		$c = new Collection(['a' => 1, 'b' => 2, 'c' => 3]);
+
+		$d = new Collection(['b' => 2, 'c' => 3, 'e' =>99]);
+
+		$e = new Collection([1, 2]);
+
+		// Non-Assoc DIFF
+
+		$this->assertEquals(
+			['a' => 1],
+			$c->diff($d)->all()
+		);
+
+		$this->assertEquals(
+			['c' => 3, 'e' => 99],
+			$d->diff($e)->all()
+		);
+
+		$this->assertEquals(
+			['e' => 99],
+			$d->diff($c, true)->all()
+		);
+
+
+	}
+
 
 
 }

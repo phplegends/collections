@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"func_get",
+				"func_get_arg〔function〕"
+			],
+			[
+				"sort",
+				"sortBy〔function〕"
+			],
+			[
 				"Colle",
 				"CollectionInterface"
 			],
@@ -506,14 +514,6 @@
 			[
 				"threa",
 				"threading〔module〕"
-			],
-			[
-				"iterator_",
-				"iterator_to_array〔function〕"
-			],
-			[
-				"__con",
-				"__construct〔function〕"
 			]
 		]
 	},
@@ -528,18 +528,37 @@
 			}
 		},
 		{
+			"contents": "<?php\n\nnamespace PHPLegends\\Collections;\n\nuse PHPLegends\\Collections\\Contracts\\ArrayableInterface;\n\n/**\n* @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>\n**/\nclass Collection implements \n    ArrayableInterface,\n    \\ArrayAccess,\n    \\Countable,\n    \\IteratorAggregate,\n    \\JsonSerializable\n{   \n\n    /**\n    * @var array\n    */\n    protected $items = [];\n\n    public function __construct(array $items = [])\n    {\n        // Insert only is not empty\n\n        $items && $this->replace($items);\n    }\n\n    \n\n    /**\n    * Easy way to create the object statically without conflict with inheritances\n    * @uses func_get_args()\n    */\n    public static function create()\n    {\n        $reflect = new \\ReflectionClass(get_called_class());\n\n        return $reflect->newInstanceArgs(func_get_args());\n    }\n\n    /**\n    * @param mixed $item\n    */\n    public function add($item)\n    {\n        $this->items[] = $item;\n\n        return $this;\n    }\n\n    /**\n    * @param Collection $collection\n    * @return $this\n    */\n    public function addAll(Collection $collection)\n    {\n        $this->merge($collection->all());\n\n        return $this;\n    }\n\n    /**\n    * @param array $items\n    * @return $this\n    */\n    public function merge(array $items)\n    {\n        $this->items = array_merge($this->items, $items);\n\n        return $this;\n    }\n\n    /**\n    * @return Collection\n    */\n    public function reverse()\n    {\n        return static::create(array_reverse($this->items, true));\n    }\n\n    /**\n    * @param callable|null $callback\n    * @return mixed\n    */\n    public function last(callable $callback = null)\n    {\n        if (null === $callback)\n        {\n            return end($this->items);\n        }\n\n        foreach (array_reverse($this->all()) as $key => $value)\n        {\n            if ($callback($value, $key, $this)) return $value;\n        }\n    }\n\n    /**\n    * @param callable|null $callback\n    * @return mixed\n    */\n    public function first(callable $callback = null)\n    {\n        if (null === $callback)\n        {\n            return reset($this->items);\n        }\n\n        foreach($this->all() as $key => $value)\n        {\n            if ($callback($value, $key, $this)) return $value;\n        }\n    }\n\n    /**\n    * @param callable|null $callback\n    * @return Collection\n    */\n    public function filter(callable $callback)\n    {\n        return static::create(array_filter($this->all(), $callback));\n    }\n\n    /**\n    * @param callable|null $callback\n    * @return array\n    */\n    public function map(callable $callback = null)\n    {\n        $items = array_map($callback, $this->items, $keys = $this->keys());\n\n        return $this->newEmptyCollection()->replace(array_combine($keys, $items));\n    }\n\n    /**\n    * @return int\n    */\n    public function count()\n    {\n        return count($this->items);\n    }\n\n    /**\n    * @{inheritdoc}\n    */\n    public function toArray()\n    {\n        $callback = function ($value) {\n\n            if ($value instanceof ArrayableInterface) {\n\n                return $value->toArray();\n            }\n\n            return $value;\n\n        };\n\n        return array_map($callback, $this->all());\n    }\n\n    /**\n    * @param callable|null $callback\n    * @return Collection\n    */\n    public function sort(callable $callback = null)\n    {   \n        $items = $this->all();\n\n        $callback ? uasort($items, $callback) : asort($items, SORT_REGULAR);\n\n        return static::create($items);\n    }\n\n    /**\n    * @param callable|null $callback\n    * @param boolean $ascending\n    * @return Collection\n    */\n    public function sortBy(callable $callback, $ascending = true)\n    {\n        $results = $this->map($callback)->all();\n\n        $ascending ? asort($results, SORT_REGULAR) : arsort($results, SORT_REGULAR);\n       \n        foreach (array_keys($results) as $key) {\n\n            $results[$key] = $this->items[$key];\n        }\n        \n        return static::create($results);\n    }\n\n    public function sortByDesc(callable $callback)\n    {\n        return $this->sortBy($callback, false);\n    }\n\n    /**\n    * Remove last item of collection\n    * @return mixed\n    */\n    public function pop()\n    {\n        return array_pop($this->items);\n    }\n\n    /**\n    * Add an item in first position of collection\n    * @param mixed $item\n    */\n    public function unshift($item)\n    {\n        array_unshift($this->items, $item);\n\n        return $this;\n    }\n\n    /**\n    * @return mixed\n    */\n\n    public function shift()\n    {\n        return array_shift($this->items);\n    }\n\n    /**\n    * @param mixed $value\n    * @return boolean\n    */\n    public function contains($value)\n    {\n        return in_array($value, $this->all(), true);\n    }\n\n    /**\n    * @param mixed $value\n    * @return int|string\n    */\n    public function search($value)\n    {\n        return array_search($value, $this->items, true);\n    }\n\n    /**\n    * Is empty?\n    * @return boolean\n    */\n    public function isEmpty()\n    {\n        return empty($this->items);\n    }\n\n    /**\n    * @return array\n    */\n    public function all()\n    {\n        return $this->items;\n    }\n\n    /**\n    * Returns all values in an array with \"reseted\" keys\n    * @return array\n    */\n    public function values()\n    {\n        return array_values($this->all());\n    }\n\n\n    /**\n    * @param string|int $key\n    * @param mixed $value\n    * @return mixed\n    */\n    public function offsetSet($key, $value)\n    {\n        if ($key === null) {\n\n            return $this->add($value);\n\n        } else {\n\n            $this->set($key, $value);\n        }\n    }\n\n    /**\n    * @param string|int $key\n    * @return mixed\n    */\n\n    public function offsetGet($key)\n    {\n        return $this->get($key);\n    }\n\n    /**\n    * @param string|int $key\n    * @return boolean\n    */\n    public function offsetExists($key)\n    {\n        return $this->has($key);\n    }\n\n    /**\n    * @param string|int $key\n    * @return void\n    */\n    public function offsetUnset($key)\n    {\n        $this->removeKey($key);\n    }\n\n    /**\n    * \n    * @return \\ArrayIterator\n    */\n    public function getIterator()\n    {\n        return new \\ArrayIterator($this->all());\n    }\n\n    /**\n    * @param string|int $key\n    * @param null|mixed $default\n    * @return mixed\n    */\n    public function get($key, $default = null)\n    {\n        return $this->has($key) ? $this->items[$key] : $default;\n    }\n\n    /**\n    * @return boolean\n    */\n    public function has($key)\n    {\n        return isset($this->items[$key]);\n    }\n\n    /**\n    * Unset item from collection via index and return value\n    * @param int|string $key\n    * @return mixed\n    */\n    public function removeKey($key)\n    {\n        $value = $this->get($key);\n\n        unset($this->items[$key]);\n\n        return $value;\n    }\n\n    /**\n    * Unset item from collection via value and return index\n    * @param mixed $value\n    * @return int|string\n    */\n    public function remove($value)\n    {\n        $key = $this->search($value);\n\n        $this->removeKey($key);\n\n        return $key;\n    }\n\n    /**\n    * Retrieves all keys of collection \n    * @return array\n    */\n    public function keys()\n    {\n        return array_keys($this->items);\n    }\n\n    /**\n    * @param int|string $key\n    * @param mixed $value\n    * @return $this\n    */\n    public function set($key, $value)\n    {\n        $this->items[$key] = $value;\n\n        return $this;\n    }\n\n    /**\n    * @param array $items\n    * @return $this\n    */\n    public function replace(array $items)\n    {\n        $this->items = $items;\n\n        return $this;\n    }\n\n    /**\n    * @return array\n    */\n    public function jsonSerialize()\n    {\n        return $this->toArray();\n    }\n\n    /**\n    * @param \\PHPLegends\\Collections\\Collection $collection\n    * @param boolean $associative \n    */\n    public function intersect(self $collection, $associative = false)\n    {\n        $func = ($associative) ? 'array_intersect_assoc' : 'array_intersect';\n\n        return static::create($func($this->all(), $collection->all()));\n    }\n\n\n    /**\n    * @param \\PHPLegends\\Collections\\Collection $collection\n    * @param boolean $associative \n    **/\n    public function diff(self $collection, $associative = false)\n    {\n        $func = ($associative) ? 'array_diff_assoc' : 'array_diff';\n\n        return static::create($func($this->all(), $collection->all()));\n    }\n\n    /**\n    * @param callable $callback\n    * @param mixed|null $initial\n    * @return mixed\n    */\n    public function reduce(callable $callback, $initial = null)\n    {\n        return array_reduce($this->items, $callback, $initial);\n    }\n\n    /**\n    * @param int $size\n    * @return Collection\n    */\n    public function chunk($size)\n    {\n        $chunks = $this->newEmptyCollection();\n\n        foreach(array_chunk($this->all(), $size, true) as $chunk)\n        {\n            $collection[] = $this->newEmptyCollection($chunk);\n        }\n\n        return $chunks;\n    }\n\n    /**\n    * @return $this\n    */\n    public function clear()\n    {\n        $this->replace([]);\n\n        return $this;\n    }\n\n    protected function newEmptyCollection()\n    {\n        return new static();\n    }\n}",
 			"file": "src/Collection.php",
+			"file_size": 9142,
+			"file_write_time": 131039228486362913,
 			"settings":
 			{
-				"buffer_size": 5279,
+				"buffer_size": 9148,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "test/CollectionTest.php",
+			"contents": "<?php\n\nclass Collection\n{\n    protected $items = [];\n\n    public function __construct(array $items = [])\n    {\n        $this->items = $items;\n    }\n\n    public function filter(\\Closure $callback)\n    {\n        return new static(array_filter($this->items, $callback));\n    }\n\n    public function map(\\Closure $callback)\n    {\n\n        $items = array_map($callback, $this->items, array_keys($this->items));\n\n        return new static($items);\n    }\n\n}",
 			"settings":
 			{
-				"buffer_size": 6676,
+				"buffer_size": 449,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": ".travis.yml",
+			"settings":
+			{
+				"buffer_size": 187,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "composer.json",
+			"settings":
+			{
+				"buffer_size": 402,
 				"line_ending": "Unix"
 			}
 		}
@@ -803,10 +822,26 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 232.0,
-		"last_filter": "remove ",
+		"height": 400.0,
+		"last_filter": "install",
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"rei",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reiden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
 			[
 				"remove ",
 				"Package Control: Remove Package"
@@ -828,16 +863,8 @@
 				"Trello: Navigate"
 			],
 			[
-				"install",
-				"Package Control: Install Package"
-			],
-			[
 				"tod",
 				"Set Syntax: ToDone"
-			],
-			[
-				"php",
-				"Set Syntax: PHP"
 			],
 			[
 				"todo",
@@ -894,10 +921,6 @@
 			[
 				"json",
 				"Set Syntax: JSON"
-			],
-			[
-				"reiden",
-				"Indentation: Reindent Lines"
 			],
 			[
 				"sass",
@@ -957,10 +980,6 @@
 			],
 			[
 				"reid",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"rei",
 				"Indentation: Reindent Lines"
 			],
 			[
@@ -1404,16 +1423,17 @@
 	},
 	"expanded_folders":
 	[
-		"/var/www/packages/collections",
-		"/var/www/packages/collections/src",
-		"/var/www/packages/collections/test"
+		"/var/www/packages/collections"
 	],
 	"file_history":
 	[
+		"/var/www/packages/collections/src/Collection.php",
+		"/var/www/packages/collections/test/CollectionTest.php",
+		"/var/www/packages/collections/collections.sublime-project",
+		"/var/www/packages/collections/src/CMP.php",
 		"/var/www/packages/collections/test/TypedCollectionTest.php",
 		"/var/www/packages/collections/src/TypedCollection.php",
 		"/var/www/packages/collections/composer.json",
-		"/var/www/packages/collections/src/Collection.php",
 		"/var/www/packages/collections/phpunit.xml",
 		"/var/www/packages/collections/src/contracts/ArrayableInterface.php",
 		"/var/www/packages/collections/test/StdClassCollection.php",
@@ -1534,14 +1554,11 @@
 		"/var/www/unibh/app/views/layouts/default.blade.php",
 		"/var/www/unibh/app/models/RemessaStatus.php",
 		"/var/www/unibh/public/js/wm-modal.js",
-		"/var/www/unibh/app/config/log.php",
-		"/var/www/unibh/public/css/remessa/conferir_cartao.css",
-		"/var/www/unibh/app/commands/ImageMigration.php",
-		"/var/www/unibh/public/css/default.css"
+		"/var/www/unibh/app/config/log.php"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -1605,6 +1622,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"replace",
+			"static::create",
+			"new static",
+			"static::create",
+			"new static",
 			"set(",
 			"set",
 			"detalhes_tecnicos",
@@ -1727,12 +1749,7 @@
 			"$media-mobile",
 			"button-border-variation",
 			";\n",
-			"margin",
-			"tmt-grid",
-			"tmt",
-			"20",
-			"$button-color",
-			"button-color-default"
+			"margin"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1807,7 +1824,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1816,25 +1833,26 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 5279,
+						"buffer_size": 9148,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2206,
-								2206
+								517,
+								517
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1957.0,
+						"translation.y": 216.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1842,32 +1860,91 @@
 				},
 				{
 					"buffer": 2,
-					"file": "test/CollectionTest.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6676,
+						"buffer_size": 449,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2964,
-								2964
+								7,
+								7
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2824.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": ".travis.yml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 187,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								187,
+								187
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/YAML/YAML.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "composer.json",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 402,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								288,
+								288
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1875,7 +1952,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 27.0
+		"height": 30.0
 	},
 	"input":
 	{
@@ -1940,7 +2017,7 @@
 	"project": "collections.sublime-project",
 	"replace":
 	{
-		"height": 50.0
+		"height": 56.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -1950,12 +2027,12 @@
 		"selected_items":
 		[
 			[
-				"collectte",
-				"test/CollectionTest.php"
-			],
-			[
 				"collec",
 				"src/Collection.php"
+			],
+			[
+				"collectte",
+				"test/CollectionTest.php"
 			],
 			[
 				"",
@@ -2467,20 +2544,24 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "una",
+		"last_filter": "uni",
 		"selected_items":
 		[
-			[
-				"una",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
-			],
 			[
 				"uni",
 				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
 			],
 			[
+				"",
+				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
 				"unibh",
 				"/var/www/unibh/unibh-identidade-estudantil.sublime-project"
+			],
+			[
+				"una",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
 				"suppor",
@@ -2493,10 +2574,6 @@
 			[
 				"unas",
 				"/var/www/unaselo/una_selo.sublime-project"
-			],
-			[
-				"",
-				"/var/www/packages/support/support.sublime-project"
 			],
 			[
 				"unab",
