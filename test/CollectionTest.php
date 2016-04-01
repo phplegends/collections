@@ -316,7 +316,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	{
 		$c = new Collection;
 
-		$value = $c->get('non-exists', 'default_value');
+		$value = $c->getOrDefault('non-exists', 'default_value');
 
 		$this->assertEquals('default_value', $value);
 
@@ -578,7 +578,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
 		$this->assertTrue($c->has('email'));
 
-		$email = $c->removeKey('email');
+		$email = $c->delete('email');
 
 		$this->assertEquals(
 			'wallacemaxters@gmail.com',

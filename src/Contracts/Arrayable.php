@@ -2,7 +2,7 @@
 
 namespace PHPLegends\Collections\Contracts;
 
-interface ArrayableInterface
+interface Arrayable
 {
 
 	/**
