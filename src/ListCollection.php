@@ -38,54 +38,54 @@ class ListCollection implements
         return $this->items;
     }
 
-	public function setItems(array $items)
-	{
-		array_map([$this, 'add'], $items);
+    public function setItems(array $items)
+    {
+      array_map([$this, 'add'], $items);
 
-		return $this;
-	}
+      return $this;
+  }
 
-	public function addAll(Collectible $collection)
-	{
-		array_map([$this, 'add'], $collection->all());
+  public function addAll(Collectible $collection)
+  {
+      array_map([$this, 'add'], $collection->all());
 
-		return $this;
-	}
+      return $this;
+  }
 
-	public function removeAll(Collectible $collection)
-	{
-		array_map([$this, 'remove'], $collection->all());
+  public function removeAll(Collectible $collection)
+  {
+      array_map([$this, 'remove'], $collection->all());
 
-		return $this;
-	}
+      return $this;
+  }
 
-	public function remove($value)
-	{
-		$key = array_search($value, $this->items, true);
+  public function remove($value)
+  {
+      $key = array_search($value, $this->items, true);
 
-        if ($key === false) return null;
+      if ($key === false) return null;
 
-		unset($this->items[$key]);
+      unset($this->items[$key]);
 
-		return $key;
-	}
+      return $key;
+  }
 
-	public function contains($value)
-	{
-		return array_search($value, $this->items, true) !== false;
-	}
+  public function contains($value)
+  {
+      return array_search($value, $this->items, true) !== false;
+  }
 
-	public function shift()
-	{
-		return array_shift($this->items);
-	}
+  public function shift()
+  {
+      return array_shift($this->items);
+  }
 
-	public function unshift($item)
-	{
-		array_unshift($this->items, $item);
+  public function unshift($item)
+  {
+      array_unshift($this->items, $item);
 
-		return $this;
-	}
+      return $this;
+  }
 
     /**
     * @param callable|null $callback
@@ -112,7 +112,7 @@ class ListCollection implements
     {
         return static::create(
             array_filter($this->all(), $callback)
-        );
+            );
     }
 
     /**
@@ -134,7 +134,7 @@ class ListCollection implements
     {
         return static::create(
             array_reverse($this->items, $preserveKeys)
-        );
+            );
     }
 
     /**
@@ -157,8 +157,8 @@ class ListCollection implements
      /**
     * @return Collection
     */
-    public function shuffle()
-    {
+     public function shuffle()
+     {
         $items = $this->all();
 
         shuffle($items);
@@ -236,7 +236,7 @@ class ListCollection implements
     {
         return new static(array_slice(
             $this->all(), $offset, $length, $preserveKeys
-        ));
+            ));
     }
 
     /**
@@ -274,7 +274,7 @@ class ListCollection implements
             $callback,
             $this->all(),
             $keys = $this->keys()
-        );
+            );
 
         return static::create($items);
     }
@@ -284,8 +284,8 @@ class ListCollection implements
         $results = $this->map($callback)->all();
 
         $ascending ? 
-            asort($results, SORT_REGULAR) : arsort($results, SORT_REGULAR);
-       
+        asort($results, SORT_REGULAR) : arsort($results, SORT_REGULAR);
+        
         foreach (array_keys($results) as $key) {
 
             $results[$key] = $this->items[$key];
@@ -335,7 +335,7 @@ class ListCollection implements
             false,
             array_map($callback, $this->all(), $this->keys()), 
             true
-        );
+            );
     }
 
     /**
@@ -349,7 +349,7 @@ class ListCollection implements
             true,
             array_map($callback, $this->all(), $this->keys()),
             true
-        );
+            );
     }
 
 
