@@ -10,6 +10,10 @@ use PHPLegends\Collections\Contracts\Modifiable;
 use PHPLegends\Collections\Contracts\Validatable;
 use PHPLegends\Collections\Contracts\Collectible;
 
+/**
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * 
+ * */
 class ListCollection implements 
     Arrayable,
     Collectible,

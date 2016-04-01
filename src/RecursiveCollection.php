@@ -4,6 +4,10 @@ namespace PHPLegends\Collections;
 
 use RecursiveArrayIterator;
 
+/**
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * 
+ * */
 class RecursiveCollection extends Collection
 {
     /**
