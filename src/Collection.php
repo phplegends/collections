@@ -3,10 +3,9 @@
 namespace PHPLegends\Collections;
 
 use ArrayAccess;
-use PHPLegends\Collections\Contracts\Collectible;
-use PHPLegends\Collections\Contracts\Accessible;
 use PHPLegends\Collections\Contracts\Arrayable;
-
+use PHPLegends\Collections\Contracts\Accessible;
+use PHPLegends\Collections\Contracts\Collectible;
 
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
@@ -64,11 +63,9 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         if ($key === null) {
 
             return $this->add($value);
-
-        } else {
-
-            $this->set($key, $value);
         }
+
+        $this->set($key, $value);
     }
 
     /**
@@ -201,5 +198,33 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     public function getOrDefault($key, $default = null)
     {
         return array_replace($this->all(), [$key => $default])[$key];
+    }
+
+    /**
+    * Check if all elements return true in test of callback
+    * @param callable $callback - The callback must return the boolean type
+    * @return boolean
+    */
+    public function every(callable $callback)
+    {
+        return ! in_array(
+            false,
+            array_map($callback, $this->all(), $this->keys()), 
+            true
+        );
+    }
+
+    /**
+    * Some value returns true.
+    * @param callable $callback - The callback must return the boolean type
+    * @return boolean
+    */
+    public function some(callable $callback)
+    {
+        return in_array(
+            true,
+            array_map($callback, $this->all(), $this->keys()),
+            true
+        );
     }
 }

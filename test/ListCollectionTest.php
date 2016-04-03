@@ -2,7 +2,7 @@
 
 use PHPLegends\Collections\ListCollection;
 
-class ListCollectionTes extends PHPUnit_Framework_TestCase
+class ListCollectionTest extends PHPUnit_Framework_TestCase
 {
 	public function testAdd()
 	{
@@ -88,6 +88,33 @@ class ListCollectionTes extends PHPUnit_Framework_TestCase
 		);
 	}
 
+	public function testValidates()
+	{
+
+		$pogs = $this->createStringCollection();
+
+		$this->assertTrue(
+			$pogs->every('is_string')
+		);
+
+		$this->assertTrue(
+			$pogs->every(function ($value)
+			{
+				return strpos($value, 'e') !== false;
+			})
+		);
+
+		$this->assertTrue(
+			$pogs->some(function ($value) {
+				return $value == 'wallace';
+			})
+		);
+
+		$this->assertFalse($pogs->every('is_numeric'));
+
+		$this->assertFalse($pogs->some('is_int'));
+	}
+
 	protected function createNumericCollection()
 	{
 		return new ListCollection([1, 3, 8, 9, 12, 5]);
@@ -97,33 +124,5 @@ class ListCollectionTes extends PHPUnit_Framework_TestCase
 	{
 		return new ListCollection(['miguel', 'guilherme', 'wallace']);
 	}
-
-	
-	/**
-	* Check if all elements return true in test of callback
-	* @param callable $callback - The callback must return the boolean type
-	* @return boolean
-	*/
-	public function every(callable $callback)
-	{
-	    return ! in_array(
-	        false,
-	        array_map($callback, $this->all(), $this->keys()), 
-	        true
-	    );
-	}
-
-	/**
-	* Some value returns true.
-	* @param callable $callback - The callback must return the boolean type
-	* @return boolean
-	*/
-	public function some(callable $callback)
-	{
-	    return in_array(
-	        true,
-	        array_map($callback, $this->all(), $this->keys()),
-	        true
-	    );
-	}
 }
+

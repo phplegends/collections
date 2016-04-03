@@ -278,7 +278,7 @@ class ListCollection implements
             $callback,
             $this->all(),
             $keys = $this->keys()
-            );
+        );
 
         return static::create($items);
     }
@@ -320,7 +320,7 @@ class ListCollection implements
             if ($value instanceof Arrayable)
             {
                 return $value->toArray();
-            }
+            } 
 
             return $value;
 
@@ -337,9 +337,9 @@ class ListCollection implements
     {
         return ! in_array(
             false,
-            array_map($callback, $this->all(), $this->keys()), 
+            array_map($callback, $this->all()), 
             true
-            );
+        );
     }
 
     /**
@@ -351,11 +351,10 @@ class ListCollection implements
     {
         return in_array(
             true,
-            array_map($callback, $this->all(), $this->keys()),
+            array_map($callback, $this->all()),
             true
-            );
+        );
     }
-
 
     /**
     * Is empty?
@@ -376,13 +375,16 @@ class ListCollection implements
         return $this;
     }
 
+    /**
+    * Removes last item from items
+    * @return mixed
+    */
     public function pop()
     {
         return array_pop($this->items);
     }
 
     /**
-    * 
     * @return \ArrayIterator
     */
     public function getIterator()

@@ -10,6 +10,7 @@ interface Modifiable
 {
     /**
     * @param int $size
+    * @param boolean $preserveKeys
     * @return Collection
     */
     public function chunk($amont, $preserveKeys = true);
@@ -50,6 +51,11 @@ interface Modifiable
     */
     public function reverse($preserveKeys = true);
 
+    /**
+    * @param int $offset 
+    * @param int $limit
+    * @return Collectible
+    */
     public function slice($offset, $limit);
 
     /**
@@ -66,15 +72,13 @@ interface Modifiable
     public function sortBy(callable $callback, $ascending = true);
 
     /**
-    * @param callable|null $callback
-    * @param boolean $ascending
     * @return Collectible
     */
-    public function sortByDesc(callable $callback);
+    public function unique();
 
     /**
     * @return Collectible
     */
-    public function unique();
+    public function shuffle();
 
 }
