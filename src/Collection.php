@@ -99,6 +99,7 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     /**
     * @param string|int $key
     * @param null|mixed $default
+    * @throws \UnexpectedValueException
     * @return mixed
     */
     public function get($key)
@@ -190,6 +191,9 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         return $this;
     }   
 
+    /**
+    * @{inheritdoc}
+    */
     public function search($key)
     {
         return array_search($key, $this->all(), true);
@@ -226,5 +230,30 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
             array_map($callback, $this->all(), $this->keys()),
             true
         );
+    }
+
+    /**
+    * Overwrites the parent method
+    * @uses self::keys()
+    * @return array
+    */
+    public function map(callable $callback = null)
+    {
+        $items = array_map(
+            $callback,
+            $this->all(),
+            $this->keys()
+        );
+
+        return static::create($items);
+    }
+
+    public function sortByKeys($ascending = true)
+    {
+        $items = $this->all();
+
+        $ascending ? ksort($items) : krsort($items);
+
+        return static::create($items);
     }
 }

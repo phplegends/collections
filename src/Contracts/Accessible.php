@@ -85,4 +85,11 @@ interface Accessible
      * @return mixed
      * */
     public function getOrDefault($key, $default = null);
+
+
+    /**
+    * @param boolean $ascending
+    */
+    public function sortByKeys($ascending = true);
+
 }
