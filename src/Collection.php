@@ -45,15 +45,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     }
 
     /**
-    * Force the all values of collection as list
-    * @return Collection
-    */
-    public function toList()
-    {
-        return static::create($this->values());
-    }
-
-    /**
     * @param string|int $key
     * @param mixed $value
     * @return mixed
@@ -137,15 +128,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     }
 
     /**
-    * Retrieves all keys of collection 
-    * @return array
-    */
-    public function keys()
-    {
-        return array_keys($this->items);
-    }
-
-    /**
     * @param int|string $key
     * @param mixed $value
     * @return $this
@@ -199,55 +181,22 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         return array_search($key, $this->all(), true);
     }
 
+
+    /**
+     * Get an item from collection and, if doesnt have, returns default value
+     * @param int|string $key
+     * @param mixed|null $default
+     * @return mixed
+     * */
     public function getOrDefault($key, $default = null)
     {
         return array_replace($this->all(), [$key => $default])[$key];
     }
 
     /**
-    * Check if all elements return true in test of callback
-    * @param callable $callback - The callback must return the boolean type
-    * @return boolean
+    * @param $ascending
+    * @return Collective
     */
-    public function every(callable $callback)
-    {
-        return ! in_array(
-            false,
-            array_map($callback, $this->all(), $this->keys()), 
-            true
-        );
-    }
-
-    /**
-    * Some value returns true.
-    * @param callable $callback - The callback must return the boolean type
-    * @return boolean
-    */
-    public function some(callable $callback)
-    {
-        return in_array(
-            true,
-            array_map($callback, $this->all(), $this->keys()),
-            true
-        );
-    }
-
-    /**
-    * Overwrites the parent method
-    * @uses self::keys()
-    * @return array
-    */
-    public function map(callable $callback = null)
-    {
-        $items = array_map(
-            $callback,
-            $this->all(),
-            $this->keys()
-        );
-
-        return static::create($items);
-    }
-
     public function sortByKeys($ascending = true)
     {
         $items = $this->all();

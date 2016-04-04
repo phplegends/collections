@@ -114,7 +114,6 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 		);
 
 		$this->assertFalse($pogs->every(function ($value) {
-
 			return is_numeric($value);
 		}));
 
@@ -128,7 +127,6 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 	public function testMap()
 	{
 		$l = new  ListCollection([1, 2, 4]);
-
 
 		$double = function ($v) { 
 			return $v * 2; 

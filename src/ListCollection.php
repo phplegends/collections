@@ -314,7 +314,8 @@ class ListCollection implements
     {
         $items = array_map(
             $callback,
-            $this->all()
+            $this->all(),
+            $keys = $this->keys()
         );
 
         return static::create(array_combine($keys, $items));
@@ -447,7 +448,4 @@ class ListCollection implements
     {
         return array_keys($this->all());
     }
-
-
-
 }
