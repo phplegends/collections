@@ -3,10 +3,9 @@
 namespace PHPLegends\Collections;
 
 use ArrayAccess;
-use PHPLegends\Collections\Contracts\Collectible;
-use PHPLegends\Collections\Contracts\Accessible;
 use PHPLegends\Collections\Contracts\Arrayable;
-
+use PHPLegends\Collections\Contracts\Accessible;
+use PHPLegends\Collections\Contracts\Collectible;
 
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
@@ -46,15 +45,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     }
 
     /**
-    * Force the all values of collection as list
-    * @return Collection
-    */
-    public function toList()
-    {
-        return static::create($this->values());
-    }
-
-    /**
     * @param string|int $key
     * @param mixed $value
     * @return mixed
@@ -64,11 +54,9 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         if ($key === null) {
 
             return $this->add($value);
-
-        } else {
-
-            $this->set($key, $value);
         }
+
+        $this->set($key, $value);
     }
 
     /**
@@ -136,15 +124,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         unset($this->items[$key]);
 
         return $value;
-    }
-
-    /**
-    * Retrieves all keys of collection 
-    * @return array
-    */
-    public function keys()
-    {
-        return array_keys($this->items);
     }
 
     /**

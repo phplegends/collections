@@ -235,7 +235,7 @@ class ListCollection implements
     	return new static($items);
     }
 
-    public function slice($offset, $length, $preserveKeys = true)
+    public function slice($offset, $length = null, $preserveKeys = true)
     {
         return new static(array_slice(
             $this->all(), $offset, $length, $preserveKeys
@@ -276,10 +276,10 @@ class ListCollection implements
         $items = array_map(
             $callback,
             $this->all(),
-            $this->keys()
+            $keys = $this->keys()
         );
 
-        return static::create($items);
+        return static::create(array_combine($keys, $items));
     }
 
     public function sortBy(callable $callback, $ascending = true)
@@ -319,7 +319,7 @@ class ListCollection implements
             if ($value instanceof Arrayable)
             {
                 return $value->toArray();
-            }
+            } 
 
             return $value;
 
@@ -354,8 +354,7 @@ class ListCollection implements
             true
         );
     }
-
-
+    
     /**
     * Is empty?
     * @return boolean
@@ -375,13 +374,16 @@ class ListCollection implements
         return $this;
     }
 
+    /**
+    * Removes last item from items
+    * @return mixed
+    */
     public function pop()
     {
         return array_pop($this->items);
     }
 
     /**
-    * 
     * @return \ArrayIterator
     */
     public function getIterator()
@@ -392,10 +394,11 @@ class ListCollection implements
     /**
      * @return array
      * */
-
     public function keys()
     {
         return array_keys($this->all());
     }
+
+
 
 }

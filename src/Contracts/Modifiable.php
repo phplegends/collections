@@ -4,12 +4,12 @@ namespace PHPLegends\Collections\Contracts;
 
 /**
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 interface Modifiable
 {
     /**
     * @param int $size
+    * @param boolean $preserveKeys
     * @return Collection
     */
     public function chunk($amont, $preserveKeys = true);
@@ -56,7 +56,8 @@ interface Modifiable
     * @param null|int $limit 
     * @return Collectible
     */
-    public function slice($offset, $limit = null);
+    public function slice($offset, $limit);
+
 
     /**
     * @param callable $callback|null
@@ -72,15 +73,13 @@ interface Modifiable
     public function sortBy(callable $callback, $ascending = true);
 
     /**
-    * @param callable|null $callback
-    * @param boolean $ascending
     * @return Collectible
     */
-    public function sortByDesc(callable $callback);
+    public function unique();
 
     /**
     * @return Collectible
     */
-    public function unique();
+    public function shuffle();
 
 }
