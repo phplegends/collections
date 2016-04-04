@@ -3,8 +3,9 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
- * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ * Interface for key value collection. Contract for use named keys in collection
  * 
+ * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * */
 interface Accessible
 {   

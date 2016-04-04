@@ -94,7 +94,10 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 		$pogs = $this->createStringCollection();
 
 		$this->assertTrue(
-			$pogs->every('is_string')
+			$pogs->every(function ($value)
+			{
+				return is_string($value);
+			})
 		);
 
 		$this->assertTrue(
@@ -110,9 +113,15 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 			})
 		);
 
-		$this->assertFalse($pogs->every('is_numeric'));
+		$this->assertFalse($pogs->every(function ($value) {
 
-		$this->assertFalse($pogs->some('is_int'));
+			return is_numeric($value);
+		}));
+
+		$this->assertFalse($pogs->some(function ($value)
+		{
+			return is_int($value);
+		}));
 	}
 
 

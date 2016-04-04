@@ -4,7 +4,6 @@ namespace PHPLegends\Collections\Contracts;
 
 /**
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 interface Modifiable
 {
@@ -52,11 +51,13 @@ interface Modifiable
     public function reverse($preserveKeys = true);
 
     /**
-    * @param int $offset 
-    * @param int $limit
+    * Returns the slice for collection
+    * @param int $offset
+    * @param null|int $limit 
     * @return Collectible
     */
     public function slice($offset, $limit);
+
 
     /**
     * @param callable $callback|null

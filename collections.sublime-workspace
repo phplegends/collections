@@ -520,34 +520,45 @@
 	"buffers":
 	[
 		{
+			"file": "test/TimeCollection.php",
+			"settings":
+			{
+				"buffer_size": 406,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Contracts/Modifiable.php",
+			"settings":
+			{
+				"buffer_size": 1709,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Collection.php",
+			"settings":
+			{
+				"buffer_size": 4367,
+				"line_ending": "Unix"
+			}
+		},
+		{
 			"file": "src/ListCollection.php",
 			"settings":
 			{
-				"buffer_size": 7719,
+				"buffer_size": 7924,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Contracts/Accessible.php",
+			"contents": "Searching 364 files for \"<<<\"\n\n0 matches",
 			"settings":
 			{
-				"buffer_size": 748,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "src/RecursiveCollection.php",
-			"settings":
-			{
-				"buffer_size": 833,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Unix"
+				"buffer_size": 40,
+				"line_ending": "Unix",
+				"name": "Find Results",
+				"scratch": true
 			}
 		}
 	],
@@ -810,10 +821,22 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 183.0,
-		"last_filter": "docb",
+		"height": 400.0,
+		"last_filter": "php",
 		"selected_items":
 		[
+			[
+				"php",
+				"Set Syntax: PHP"
+			],
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reide",
+				"Indentation: Reindent Lines"
+			],
 			[
 				"docb",
 				"Snippet: Start Docblock"
@@ -845,10 +868,6 @@
 			[
 				"install",
 				"Package Control: Install Package"
-			],
-			[
-				"php",
-				"Set Syntax: PHP"
 			],
 			[
 				"remove ",
@@ -987,10 +1006,6 @@
 				"Set Syntax: C++"
 			],
 			[
-				"reid",
-				"Indentation: Reindent Lines"
-			],
-			[
 				"xpath",
 				"XPath: Goto open tag"
 			],
@@ -1008,10 +1023,6 @@
 			],
 			[
 				"inde",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"reide",
 				"Indentation: Reindent Lines"
 			],
 			[
@@ -1437,6 +1448,15 @@
 	],
 	"file_history":
 	[
+		"/var/www/packages/collections/src/ListCollection.php",
+		"/var/www/packages/collections/src/Contracts/Collectible.php",
+		"/var/www/packages/collections/src/ObjectCollection.php",
+		"/var/www/packages/collections/src/Contracts/Accessible.php",
+		"/var/www/packages/collections/src/Contracts/Modifiable.php",
+		"/var/www/packages/collections/collections.sublime-project",
+		"/var/www/packages/collections/src/Contracts/Arrayable.php",
+		"/var/www/packages/collections/src/Contracts/Validatable.php",
+		"/var/www/packages/collections/src/RecursiveCollection.php",
 		"/var/www/packages/collections/README.md",
 		"/var/www/packages/collections/composer.json",
 		"/var/www/packages/collections/.travis.yml",
@@ -1445,7 +1465,6 @@
 		"/var/www/packages/collections/.gitignore",
 		"/var/www/packages/collections/src/Collection.php",
 		"/var/www/packages/collections/src/Pair.php",
-		"/var/www/packages/collections/collections.sublime-project",
 		"/var/www/packages/collections/src/CMP.php",
 		"/var/www/packages/collections/test/TypedCollectionTest.php",
 		"/var/www/packages/collections/src/TypedCollection.php",
@@ -1556,19 +1575,11 @@
 		"/var/www/unibh/app/controllers/webservice/ServerController.php",
 		"/var/www/unibh/public/js/remessa/conferir.js",
 		"/var/www/unibh/app/views/remessa/conferir.blade.php",
-		"/var/www/unibh/app/controllers/UsuarioController.php",
-		"/home/wallace/Downloads/installer",
-		"/var/www/unibh/app/helpers.php",
-		"/var/www/unibh/app/config/app.php",
-		"/etc/hosts",
-		"/var/www/unibh/app/views/usuario/guest.blade.php",
-		"/var/www/unibh/public/js/jquery-ui.js",
-		"/var/www/unibh/public/js/jquery-ui-pt-br.js",
-		"/var/www/unibh/app/models/Usuario.php"
+		"/var/www/unibh/app/controllers/UsuarioController.php"
 	],
 	"find":
 	{
-		"height": 69.0
+		"height": 38.0
 	},
 	"find_in_files":
 	{
@@ -1632,6 +1643,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"keys",
+			"<<<",
 			"        \n",
 			"\n			['a' => 1],",
 			"diff",
@@ -1757,9 +1770,7 @@
 			"        \n",
 			"darken",
 			"input-st",
-			"$button-color-dark",
-			"button-st",
-			" @"
+			"$button-color-dark"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -1806,24 +1817,53 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/ListCollection.php",
+					"file": "test/TimeCollection.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7719,
+						"buffer_size": 406,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								484,
-								484
+								50,
+								50
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Contracts/Modifiable.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1709,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								118,
+								118
 							]
 						],
 						"settings":
@@ -1834,77 +1874,80 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "src/Contracts/Accessible.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 748,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								204,
-								204
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
 						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/RecursiveCollection.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 833,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								833,
-								833
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 80.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
+					"buffer": 2,
+					"file": "src/Collection.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 0,
+						"buffer_size": 4367,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2822,
+								2822
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2754.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "src/ListCollection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7924,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7841,
+								7841
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 6614.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 40,
 						"regions":
 						{
 						},
@@ -1917,8 +1960,15 @@
 						],
 						"settings":
 						{
-							"default_dir": "/var/www/packages/collections/src",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"detect_indentation": false,
+							"line_numbers": false,
+							"output_tag": 1,
+							"result_base_dir": "",
+							"result_file_regex": "^([^ 	].*):$",
+							"result_line_regex": "^ +([0-9]+):",
+							"scroll_past_end": true,
+							"syntax": "Packages/Default/Find Results.hidden-tmLanguage",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1932,7 +1982,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 26.0
 	},
 	"input":
 	{
@@ -1997,7 +2047,7 @@
 	"project": "collections.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 48.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2006,6 +2056,22 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"listco",
+				"src/ListCollection.php"
+			],
+			[
+				"istco",
+				"src/ListCollection.php"
+			],
+			[
+				"mod",
+				"src/Contracts/Modifiable.php"
+			],
+			[
+				"modifi",
+				"src/Contracts/Modifiable.php"
+			],
 			[
 				"collect",
 				"test/CollectionTest.php"
@@ -2501,22 +2567,6 @@
 			[
 				"solioc",
 				"unibh/app/controllers/SolicitacaoController.php"
-			],
-			[
-				"clien",
-				"unibh/app/controllers/webservice/ClientController.php"
-			],
-			[
-				"illuminatecommand",
-				"unibh/vendor/laravel/framework/src/Illuminate/Console/Command.php"
-			],
-			[
-				"artisan.php",
-				"unibh/app/start/artisan.php"
-			],
-			[
-				"soliita",
-				"unibh/app/models/Solicitacao.php"
 			]
 		],
 		"width": 0.0
@@ -2524,9 +2574,17 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "una",
+		"last_filter": "un",
 		"selected_items":
 		[
+			[
+				"un",
+				"/var/www/unabh/una-identidade-estudantil.sublime-project"
+			],
+			[
+				"mag",
+				"/var/www/magneti/magneti.sublime-project"
+			],
 			[
 				"una",
 				"/var/www/unabh/una-identidade-estudantil.sublime-project"
@@ -2598,10 +2656,6 @@
 			[
 				"fiat",
 				"/var/www/fiat/fiat.sublime-project"
-			],
-			[
-				"un",
-				"/var/www/unabh/una-identidade-estudantil.sublime-project"
 			],
 			[
 				"c",

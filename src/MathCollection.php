@@ -1,6 +1,6 @@
 <?php
 
-namespace PHPLegends\Collections\Collection;
+namespace PHPLegends\Collections;
 
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
@@ -18,7 +18,11 @@ class MathCollection extends Collection
 			return array_sum($this->all());
 		}
 
-		return $this->reduce($callback, 0);
+		return $this->reduce(function($result, $value) use($callback)
+		{
+			return $result + $callback($value);
+			
+		}, 0);
 	}
 
 	/**

@@ -55,4 +55,9 @@ interface Collectible
      * */
     public function all();
 
+    /**
+     * @return array
+     **/
+    public function keys();
+
 }
