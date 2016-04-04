@@ -361,7 +361,10 @@ class ListCollection implements
     {
         return count($this->items);
     }
-
+    
+    /**
+    * @{inheritdoc}
+    */
     public function toArray()
     {
         return array_map(function ($value) {
