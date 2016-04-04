@@ -116,7 +116,7 @@ class ListCollection implements
     {
         return static::create(
             array_filter($this->all(), $callback)
-            );
+        );
     }
 
     /**
@@ -138,7 +138,7 @@ class ListCollection implements
     {
         return static::create(
             array_reverse($this->items, $preserveKeys)
-            );
+        );
     }
 
     /**
@@ -210,7 +210,6 @@ class ListCollection implements
         return static::create($items);
     }
 
-
     /**
     * @{inheritdoc}
     **/
@@ -240,7 +239,7 @@ class ListCollection implements
     {
         return new static(array_slice(
             $this->all(), $offset, $length, $preserveKeys
-            ));
+        ));
     }
 
     /**
@@ -277,8 +276,8 @@ class ListCollection implements
         $items = array_map(
             $callback,
             $this->all(),
-            $keys = $this->keys()
-            );
+            $this->keys()
+        );
 
         return static::create($items);
     }
@@ -339,7 +338,7 @@ class ListCollection implements
             false,
             array_map($callback, $this->all(), $this->keys()), 
             true
-            );
+        );
     }
 
     /**
@@ -353,7 +352,7 @@ class ListCollection implements
             true,
             array_map($callback, $this->all(), $this->keys()),
             true
-            );
+        );
     }
 
 
@@ -388,6 +387,15 @@ class ListCollection implements
     public function getIterator()
     {
         return new \ArrayIterator($this->all());
+    }
+
+    /**
+     * @return array
+     * */
+
+    public function keys()
+    {
+        return array_keys($this->all());
     }
 
 }

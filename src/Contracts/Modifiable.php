@@ -50,7 +50,13 @@ interface Modifiable
     */
     public function reverse($preserveKeys = true);
 
-    public function slice($offset, $limit);
+    /**
+    * Returns the slice for collection
+    * @param int $offset
+    * @param null|int $limit 
+    * @return Collectible
+    */
+    public function slice($offset, $limit = null);
 
     /**
     * @param callable $callback|null

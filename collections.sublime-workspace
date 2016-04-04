@@ -520,18 +520,50 @@
 	"buffers":
 	[
 		{
-			"file": "src/ListCollection.php",
+			"file": "collections.sublime-project",
 			"settings":
 			{
-				"buffer_size": 7719,
+				"buffer_size": 167,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "src/Contracts/Accessible.php",
+			"file": "src/Contracts/Arrayable.php",
 			"settings":
 			{
-				"buffer_size": 748,
+				"buffer_size": 207,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Contracts/Collectible.php",
+			"settings":
+			{
+				"buffer_size": 1156,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Contracts/Modifiable.php",
+			"settings":
+			{
+				"buffer_size": 1632,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/Contracts/Validatable.php",
+			"settings":
+			{
+				"buffer_size": 588,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/ListCollection.php",
+			"settings":
+			{
+				"buffer_size": 7796,
 				"line_ending": "Unix"
 			}
 		},
@@ -539,14 +571,7 @@
 			"file": "src/RecursiveCollection.php",
 			"settings":
 			{
-				"buffer_size": 833,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"settings":
-			{
-				"buffer_size": 0,
+				"buffer_size": 910,
 				"line_ending": "Unix"
 			}
 		}
@@ -810,10 +835,18 @@
 	"build_varint": "",
 	"command_palette":
 	{
-		"height": 183.0,
-		"last_filter": "docb",
+		"height": 400.0,
+		"last_filter": "reid",
 		"selected_items":
 		[
+			[
+				"reid",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"reide",
+				"Indentation: Reindent Lines"
+			],
 			[
 				"docb",
 				"Snippet: Start Docblock"
@@ -987,10 +1020,6 @@
 				"Set Syntax: C++"
 			],
 			[
-				"reid",
-				"Indentation: Reindent Lines"
-			],
-			[
 				"xpath",
 				"XPath: Goto open tag"
 			],
@@ -1008,10 +1037,6 @@
 			],
 			[
 				"inde",
-				"Indentation: Reindent Lines"
-			],
-			[
-				"reide",
 				"Indentation: Reindent Lines"
 			],
 			[
@@ -1437,6 +1462,13 @@
 	],
 	"file_history":
 	[
+		"/var/www/packages/collections/src/Contracts/Collectible.php",
+		"/var/www/packages/collections/src/Contracts/Modifiable.php",
+		"/var/www/packages/collections/src/RecursiveCollection.php",
+		"/var/www/packages/collections/src/Contracts/Validatable.php",
+		"/var/www/packages/collections/src/ListCollection.php",
+		"/var/www/packages/collections/src/Contracts/Accessible.php",
+		"/var/www/packages/collections/collections.sublime-project",
 		"/var/www/packages/collections/README.md",
 		"/var/www/packages/collections/composer.json",
 		"/var/www/packages/collections/.travis.yml",
@@ -1445,7 +1477,6 @@
 		"/var/www/packages/collections/.gitignore",
 		"/var/www/packages/collections/src/Collection.php",
 		"/var/www/packages/collections/src/Pair.php",
-		"/var/www/packages/collections/collections.sublime-project",
 		"/var/www/packages/collections/src/CMP.php",
 		"/var/www/packages/collections/test/TypedCollectionTest.php",
 		"/var/www/packages/collections/src/TypedCollection.php",
@@ -1558,17 +1589,11 @@
 		"/var/www/unibh/app/views/remessa/conferir.blade.php",
 		"/var/www/unibh/app/controllers/UsuarioController.php",
 		"/home/wallace/Downloads/installer",
-		"/var/www/unibh/app/helpers.php",
-		"/var/www/unibh/app/config/app.php",
-		"/etc/hosts",
-		"/var/www/unibh/app/views/usuario/guest.blade.php",
-		"/var/www/unibh/public/js/jquery-ui.js",
-		"/var/www/unibh/public/js/jquery-ui-pt-br.js",
-		"/var/www/unibh/app/models/Usuario.php"
+		"/var/www/unibh/app/helpers.php"
 	],
 	"find":
 	{
-		"height": 69.0
+		"height": 63.0
 	},
 	"find_in_files":
 	{
@@ -1806,24 +1831,84 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 6,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "src/ListCollection.php",
+					"file": "collections.sublime-project",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 7719,
+						"buffer_size": 167,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								484,
-								484
+								167,
+								167
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/Contracts/Arrayable.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 207,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/Contracts/Collectible.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1156,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
 							]
 						],
 						"settings":
@@ -1834,91 +1919,35 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 270.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 1,
-					"file": "src/Contracts/Accessible.php",
+					"buffer": 3,
+					"file": "src/Contracts/Modifiable.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 748,
+						"buffer_size": 1632,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								204,
-								204
+								128,
+								128
 							]
 						],
 						"settings":
 						{
 							"auto_complete": false,
 							"syntax": "Packages/PHP/PHP.sublime-syntax",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "src/RecursiveCollection.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 833,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								833,
-								833
-							]
-						],
-						"settings":
-						{
-							"auto_complete": false,
-							"syntax": "Packages/PHP/PHP.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 80.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"default_dir": "/var/www/packages/collections/src",
-							"syntax": "Packages/Text/Plain text.tmLanguage"
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1926,13 +1955,106 @@
 					},
 					"stack_index": 3,
 					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "src/Contracts/Validatable.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 588,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								128,
+								128
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "src/ListCollection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 7796,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "src/RecursiveCollection.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 910,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								141,
+								141
+							]
+						],
+						"settings":
+						{
+							"auto_complete": false,
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 357.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
 				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 34.0
+		"height": 31.0
 	},
 	"input":
 	{
@@ -1997,7 +2119,7 @@
 	"project": "collections.sublime-project",
 	"replace":
 	{
-		"height": 64.0
+		"height": 58.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -2006,6 +2128,10 @@
 		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"modifi",
+				"src/Contracts/Modifiable.php"
+			],
 			[
 				"collect",
 				"test/CollectionTest.php"
@@ -2513,10 +2639,6 @@
 			[
 				"artisan.php",
 				"unibh/app/start/artisan.php"
-			],
-			[
-				"soliita",
-				"unibh/app/models/Solicitacao.php"
 			]
 		],
 		"width": 0.0
@@ -2524,9 +2646,13 @@
 	"select_project":
 	{
 		"height": 500.0,
-		"last_filter": "una",
+		"last_filter": "mag",
 		"selected_items":
 		[
+			[
+				"mag",
+				"/var/www/magneti/magneti.sublime-project"
+			],
 			[
 				"una",
 				"/var/www/unabh/una-identidade-estudantil.sublime-project"
