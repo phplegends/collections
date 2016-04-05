@@ -60,4 +60,11 @@ interface Collectible
      **/
     public function keys();
 
+    /**
+     * Searches element by index in collecion
+     * @param int|string $key
+     * @return int|string|false
+     * */
+    public function search($key);
+
 }

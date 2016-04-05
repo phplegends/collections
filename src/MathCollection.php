@@ -10,6 +10,7 @@ class MathCollection extends Collection
 {
 	/**
 	* @param callable $callback
+	* @return mixed
 	*/
 	public function sum(callable $callback = null)
 	{
@@ -27,6 +28,7 @@ class MathCollection extends Collection
 
 	/**
 	* @param callable $callback
+	* @return mixed
 	*/
 	public function max(callable $callback = null)
 	{
@@ -40,6 +42,7 @@ class MathCollection extends Collection
 
 	/**
 	* @param callable $callback
+	* @return mixed
 	*/
 	public function min(callable $callback = null)
 	{
@@ -53,6 +56,7 @@ class MathCollection extends Collection
 
 	/**
 	* @param callable $callback
+	* @return mixed
 	*/
 	public function average(callable $callback = null)
 	{

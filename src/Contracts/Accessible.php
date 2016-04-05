@@ -73,13 +73,6 @@ interface Accessible
     public function except(array $keys);
 
     /**
-     * Searches element by index in collecion
-     * @param int|string $key
-     * @return int|string|false
-     * */
-    public function search($key);
-
-    /**
     * @param boolean $ascending
     */
     public function sortByKeys($ascending = true);

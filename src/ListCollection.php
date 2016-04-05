@@ -458,4 +458,12 @@ class ListCollection implements
     {
         return array_keys($this->all());
     }
+
+    /**
+    * @{inheritdoc}
+    */
+    public function search($key)
+    {
+        return array_search($key, $this->all(), true);
+    }
 }

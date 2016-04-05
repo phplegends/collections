@@ -12,6 +12,9 @@
     "require": {
         
     },
+    "require-dev" : {
+        "victorjonsson/markdowndocs" : "1.2.*"
+    },
     "autoload" : {
         "psr-4" : {
             "PHPLegends\\Collections\\" : "src/"

@@ -173,14 +173,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         return $this;
     }   
 
-    /**
-    * @{inheritdoc}
-    */
-    public function search($key)
-    {
-        return array_search($key, $this->all(), true);
-    }
-
 
     /**
      * Get an item from collection and, if doesnt have, returns default value
