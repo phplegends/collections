@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>Class PHPLegends\Collections\Collection</title>
+
+	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+
+</head>
+
+<body>
+<div id="left">
+	<div id="menu">
+		<a href="index.html" title="Overview"><span>Overview</span></a>
+
+
+		<div id="groups">
+				<h3>Namespaces</h3>
+			<ul>
+				<li class="active">
+					<a href="namespace-PHPLegends.html">
+						PHPLegends<span></span>
+					</a>
+
+						<ul>
+				<li class="active">
+					<a href="namespace-PHPLegends.Collections.html">
+						Collections<span></span>
+					</a>
+
+						<ul>
+				<li>
+					<a href="namespace-PHPLegends.Collections.Contracts.html">
+						Contracts					</a>
+
+						</li>
+				<li>
+					<a href="namespace-PHPLegends.Collections.Exceptions.html">
+						Exceptions					</a>
+
+						</li>
+							</ul></li></ul></li>
+			</ul>
+		</div>
+
+		<hr>
+
+
+		<div id="elements">
+			<h3>Classes</h3>
+			<ul>
+				<li class="active"><a href="class-PHPLegends.Collections.Collection.html">Collection</a></li>
+				<li><a href="class-PHPLegends.Collections.ListCollection.html">ListCollection</a></li>
+				<li><a href="class-PHPLegends.Collections.MathCollection.html">MathCollection</a></li>
+				<li><a href="class-PHPLegends.Collections.RecursiveCollection.html">RecursiveCollection</a></li>
+			</ul>
+
+
+
+
+
+		</div>
+	</div>
+</div>
+
+<div id="splitter"></div>
+
+<div id="right">
+<div id="rightInner">
+	<form id="search">
+		<input type="hidden" name="cx" value="">
+		<input type="hidden" name="ie" value="UTF-8">
+		<input type="text" name="q" class="text" placeholder="Search">
+	</form>
+
+	<div id="navigation">
+		<ul>
+			<li>
+				<a href="index.html" title="Overview"><span>Overview</span></a>
+			</li>
+			<li>
+				<a href="namespace-PHPLegends.Collections.html" title="Summary of PHPLegends\Collections"><span>Namespace</span></a>
+			</li>
+			<li class="active">
+<span>Class</span>			</li>
+		</ul>
+		<ul>
+		</ul>
+		<ul>
+		</ul>
+	</div>
+
+<div id="content" class="class">
+	<h1>Class Collection</h1>
+
+
+
+	<dl class="tree">
+		<dd style="padding-left:0px">
+			<a href="class-PHPLegends.Collections.ListCollection.html"><span>PHPLegends\Collections\ListCollection</span></a>
+			
+			 implements 
+				<a href="class-PHPLegends.Collections.Contracts.Arrayable.html"><span>PHPLegends\Collections\Contracts\Arrayable</span></a>, 
+			
+				<a href="class-PHPLegends.Collections.Contracts.Collectible.html"><span>PHPLegends\Collections\Contracts\Collectible</span></a>, 
+			
+<span>Countable</span>, 
+			
+<span>JsonSerializable</span>, 
+			
+				<a href="class-PHPLegends.Collections.Contracts.Modifiable.html"><span>PHPLegends\Collections\Contracts\Modifiable</span></a>, 
+			
+				<a href="class-PHPLegends.Collections.Contracts.Validatable.html"><span>PHPLegends\Collections\Contracts\Validatable</span></a>, 
+			
+<span>IteratorAggregate</span>
+			
+			
+		</dd>
+		<dd style="padding-left:30px">
+			<img src="resources/inherit.png" alt="Extended by">
+<b><span>PHPLegends\Collections\Collection</span></b>			
+			 implements 
+<span>ArrayAccess</span>, 
+			
+				<a href="class-PHPLegends.Collections.Contracts.Accessible.html"><span>PHPLegends\Collections\Contracts\Accessible</span></a>
+			
+			
+		</dd>
+	</dl>
+
+
+	<div>
+		<h4>Direct known subclasses</h4>
+			<a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a>, 
+			<a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a>
+	</div>
+
+
+
+
+
+
+	<div class="info">
+		
+		
+		<b>Namespace:</b> <a href="namespace-PHPLegends.html">PHPLegends</a>\<a href="namespace-PHPLegends.Collections.html">Collections</a><br>
+		
+
+				<b>Author:</b>
+				Wallace de Souza Vizerra <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;">&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-PHPLegends.Collections.Collection.html#11-200" title="Go to source code">Collection.php</a>
+		<br>
+	</div>
+
+
+
+	<table class="summary methods" id="methods">
+	<caption>Methods summary</caption>
+	<tr data-order="setItems" id="_setItems">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_setItems">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#16-25" title="Go to source code">setItems</a>( <span>array <var>$items</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$items</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.ListCollection.html#_setItems">PHPLegends\Collections\ListCollection::setItems()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="addAll" id="_addAll">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_addAll">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#27-36" title="Go to source code">addAll</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$collection</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+				<h4>Overrides</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.ListCollection.html#_addAll">PHPLegends\Collections\ListCollection::addAll()</a></code></div>
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="values" id="_values">
+
+		<td class="attributes"><code>
+			 public 
+
+			array
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_values">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#38-45" title="Go to source code">values</a>( )</code>
+
+		<div class="description short">
+			<p>Returns all values in an array with "reseted" keys</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Returns all values in an array with "reseted" keys</p>
+
+
+
+				<h4>Returns</h4>
+				<div class="list">
+					array
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetSet" id="_offsetSet">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetSet">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#47-60" title="Go to source code">offsetSet</a>( <span>string|integer <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetSet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetGet" id="_offsetGet">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetGet">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#63-70" title="Go to source code">offsetGet</a>( <span>string|integer <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetGet()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetExists" id="_offsetExists">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetExists">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#72-79" title="Go to source code">offsetExists</a>( <span>string|integer <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetExists()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="offsetUnset" id="_offsetUnset">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_offsetUnset">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#81-88" title="Go to source code">offsetUnset</a>( <span>string|integer <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code>ArrayAccess::offsetUnset()</code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="get" id="_get">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_get">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#90-104" title="Go to source code">get</a>( <span>string|integer <var>$key</var></span>, <span>null|mixed <var>$default</var>,…</span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$default</var>,…</dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+				<h4>Throws</h4>
+				<div class="list">
+					UnexpectedValueException
+				</div>
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_get">PHPLegends\Collections\Contracts\Accessible::get()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="has" id="_has">
+
+		<td class="attributes"><code>
+			 public 
+
+			boolean
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_has">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#106-112" title="Go to source code">has</a>( <span>integer|string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					boolean
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_has">PHPLegends\Collections\Contracts\Accessible::has()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="delete" id="_delete">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_delete">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#114-128" title="Go to source code">delete</a>( <span>integer|string <var>$key</var></span> )</code>
+
+		<div class="description short">
+			<p>Unset item from collection via index and return value</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Unset item from collection via index and return value</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_delete">PHPLegends\Collections\Contracts\Accessible::delete()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="set" id="_set">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_set">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#130-140" title="Go to source code">set</a>( <span>integer|string <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$value</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_set">PHPLegends\Collections\Contracts\Accessible::set()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="replace" id="_replace">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_replace">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#142-157" title="Go to source code">replace</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$items</var></dt>
+					<dd></dd>
+					<dt><var>$recursive</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_replace">PHPLegends\Collections\Contracts\Accessible::replace()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="merge" id="_merge">
+
+		<td class="attributes"><code>
+			 public 
+
+			
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_merge">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#159-174" title="Go to source code">merge</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$items</var></dt>
+					<dd></dd>
+					<dt><var>$recursive</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					<br>$this
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_merge">PHPLegends\Collections\Contracts\Accessible::merge()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="getOrDefault" id="_getOrDefault">
+
+		<td class="attributes"><code>
+			 public 
+
+			mixed
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_getOrDefault">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#177-186" title="Go to source code">getOrDefault</a>( <span>integer|string <var>$key</var></span>, <span>mixed|null <var>$default</var> = <span class="php-keyword1">null</span></span> )</code>
+
+		<div class="description short">
+			<p>Get an item from collection and, if doesnt have, returns default value</p>
+		</div>
+
+		<div class="description detailed hidden">
+			<p>Get an item from collection and, if doesnt have, returns default value</p>
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$key</var></dt>
+					<dd></dd>
+					<dt><var>$default</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					mixed
+				</div>
+
+
+
+
+		</div>
+		</div></td>
+	</tr>
+	<tr data-order="sortByKeys" id="_sortByKeys">
+
+		<td class="attributes"><code>
+			 public 
+
+			Collective
+			
+			</code>
+		</td>
+
+		<td class="name"><div>
+		<a class="anchor" href="#_sortByKeys">#</a>
+		<code><a href="source-class-PHPLegends.Collections.Collection.html#188-199" title="Go to source code">sortByKeys</a>( <span> <var>$ascending</var> = <span class="php-keyword1">true</span></span> )</code>
+
+		<div class="description short">
+			
+		</div>
+
+		<div class="description detailed hidden">
+			
+
+
+				<h4>Parameters</h4>
+				<div class="list"><dl>
+					<dt><var>$ascending</var></dt>
+					<dd></dd>
+				</dl></div>
+
+				<h4>Returns</h4>
+				<div class="list">
+					Collective
+				</div>
+
+
+
+
+				<h4>Implementation of</h4>
+				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Accessible.html#_sortByKeys">PHPLegends\Collections\Contracts\Accessible::sortByKeys()</a></code></div>
+		</div>
+		</div></td>
+	</tr>
+	</table>
+
+	<table class="summary inherited">
+	<caption>Methods inherited from <a href="class-PHPLegends.Collections.ListCollection.html#methods">PHPLegends\Collections\ListCollection</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PHPLegends.Collections.ListCollection.html#___construct">__construct()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_add">add()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_all">all()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_chunk">chunk()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_clear">clear()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_contains">contains()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_count">count()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_create">create()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_diff">diff()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_every">every()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_except">except()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_filter">filter()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_first">first()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_getIterator">getIterator()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_intersect">intersect()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_isEmpty">isEmpty()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_jsonSerialize">jsonSerialize()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_keys">keys()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_last">last()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_map">map()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_only">only()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_pop">pop()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_randomItem">randomItem()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_reduce">reduce()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_reject">reject()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_remove">remove()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_removeAll">removeAll()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_reverse">reverse()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_search">search()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_shift">shift()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_shuffle">shuffle()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_slice">slice()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_some">some()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_sort">sort()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_sortBy">sortBy()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_sortByDesc">sortByDesc()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_toArray">toArray()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_unique">unique()</a>, 
+			<a href="class-PHPLegends.Collections.ListCollection.html#_unshift">unshift()</a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+
+
+
+
+
+
+
+	<table class="summary inherited">
+	<caption>Properties inherited from <a href="class-PHPLegends.Collections.ListCollection.html#properties">PHPLegends\Collections\ListCollection</a></caption>
+	<tr>
+		<td><code>
+			<a href="class-PHPLegends.Collections.ListCollection.html#$items"><var>$items</var></a>
+		</code></td>
+	</tr>
+	</table>
+
+
+
+
+
+</div>
+
+	<div id="footer">
+		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+	</div>
+</div>
+</div>
+<script src="resources/combined.js"></script>
+<script src="elementlist.js"></script>
+</body>
+</html>
