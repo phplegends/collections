@@ -90,6 +90,7 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     /**
     * @param string|int $key
     * @param null|mixed $default
+    * @throws \UnexpectedValueException
     * @return mixed
     */
     public function get($key)
@@ -172,13 +173,36 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
         return $this;
     }   
 
+    /**
+    * @{inheritdoc}
+    */
     public function search($key)
     {
         return array_search($key, $this->all(), true);
     }
 
+
+    /**
+     * Get an item from collection and, if doesnt have, returns default value
+     * @param int|string $key
+     * @param mixed|null $default
+     * @return mixed
+     * */
     public function getOrDefault($key, $default = null)
     {
         return array_replace($this->all(), [$key => $default])[$key];
+    }
+
+    /**
+    * @param $ascending
+    * @return Collective
+    */
+    public function sortByKeys($ascending = true)
+    {
+        $items = $this->all();
+
+        $ascending ? ksort($items) : krsort($items);
+
+        return static::create($items);
     }
 }

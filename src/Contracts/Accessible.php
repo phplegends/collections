@@ -80,10 +80,8 @@ interface Accessible
     public function search($key);
 
     /**
-     * Get an item from collection and, if doesnt have, returns default value
-     * @param int|string $key
-     * @param mixed|null $default
-     * @return mixed
-     * */
-    public function getOrDefault($key, $default = null);
+    * @param boolean $ascending
+    */
+    public function sortByKeys($ascending = true);
+
 }

@@ -655,5 +655,33 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	}
 
 
+	public function testSortKey()
+	{	
+
+		$items = new Collection([
+			'id'    => 1,
+			'nome'  => 'Wallace',
+			'email' => 'wallacemaxters@gmail.com',
+			'idade' => 26
+		]);
+
+		$this->assertEquals(
+			[
+				'email' => 'wallacemaxters@gmail.com',
+				'id'    => 1,
+				'idade' => 26,
+				'nome'  => 'Wallace',
+			],
+			$items->sortByKeys()->all()
+		);
+
+		$this->assertEquals(
+			['nome', 'idade', 'id', 'email'],
+			$items->sortByKeys(false)->keys()
+		);
+
+	}
+
+
 
 }

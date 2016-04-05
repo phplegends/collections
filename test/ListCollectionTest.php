@@ -114,7 +114,6 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 		);
 
 		$this->assertFalse($pogs->every(function ($value) {
-
 			return is_numeric($value);
 		}));
 
@@ -122,6 +121,53 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 		{
 			return is_int($value);
 		}));
+	}
+
+
+	public function testMap()
+	{
+		$l = new  ListCollection([1, 2, 4]);
+
+		$double = function ($v) { 
+			return $v * 2; 
+		};
+
+		$this->assertEquals(
+			[2, 4, 8],
+			$l->map($double)->all()
+		);
+	}
+
+	public function testSortBy()
+	{
+		$list = new ListCollection;
+
+		$list->add(['nome' => 'wallace', 'idade' => 26]);
+
+		$list->add(['nome' => 'mayara', 'idade' => 20]);
+
+		$list->add(['nome' => 'wayne', 'idade' => 23]);
+
+		$this->assertEquals(
+
+			['nome' =>  'mayara', 'idade' => 20],
+
+			$list->sortBy(function ($value)
+			{ 
+				return $value['idade']; 
+
+			})->first()
+		);
+	}
+
+	public function testUnique()
+	{
+		$list = new ListCollection([1, 1, 2, 2, 2, 3, 3, 3, 4]);
+
+		$this->assertEquals(
+			[1, 2, 3, 4],
+			$list->unique()->all()
+		);
 	}
 
 	protected function createNumericCollection()

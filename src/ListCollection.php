@@ -12,6 +12,8 @@ use PHPLegends\Collections\Contracts\Collectible;
 
 /**
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
+ *
+ * Collection to work with list (array without named keys)
  * 
  * */
 class ListCollection implements 
@@ -23,13 +25,22 @@ class ListCollection implements
     Validatable,
     IteratorAggregate
 {
+    /**
+    * @var
+    */
 	protected $items = [];
 
+    /**
+    * @{inheritdoc}
+    */
 	public function __construct(array $items = [])
 	{
 		$items && $this->setItems($items);
 	}
 
+    /**
+    * @{inheritdoc}
+    */
 	public function add($item)
 	{
 		$this->items[] = $item;
@@ -37,59 +48,87 @@ class ListCollection implements
 		return $this;
 	}
 
+    /**
+    * @{inheritdoc}
+    */
     public function all()
     {
         return $this->items;
     }
 
+    /**
+    * @{inheritdoc}
+    */
     public function setItems(array $items)
     {
-      array_map([$this, 'add'], $items);
+        array_map([$this, 'add'], $items);
 
-      return $this;
-  }
+        return $this;
+    }
 
-  public function addAll(Collectible $collection)
-  {
-      array_map([$this, 'add'], $collection->all());
+    /**
+    * @{inheritdoc}
+    */
+    public function addAll(Collectible $collection)
+    {
+        array_map([$this, 'add'], $collection->all());
 
-      return $this;
-  }
+        return $this;
+    }
 
-  public function removeAll(Collectible $collection)
-  {
-      array_map([$this, 'remove'], $collection->all());
+    /**
+    * @{inheritdoc}
+    */
+    public function removeAll(Collectible $collection)
+    {
+        array_map([$this, 'remove'], $collection->all());
 
-      return $this;
-  }
+        return $this;
+    }
 
-  public function remove($value)
-  {
-      $key = array_search($value, $this->items, true);
+    /**
+    * @{inheritdoc}
+    */
+    public function remove($value)
+    {
+        $key = array_search($value, $this->items, true);
 
-      if ($key === false) return null;
+        if ($key === false) return null;
 
-      unset($this->items[$key]);
+        unset($this->items[$key]);
 
-      return $key;
-  }
+        return $key;
+    }
 
-  public function contains($value)
-  {
-      return array_search($value, $this->items, true) !== false;
-  }
+    /**
+    * @{inheritdoc}
+    */
+    public function contains($value)
+    {
+        return array_search($value, $this->items, true) !== false;
+    }
 
-  public function shift()
-  {
-      return array_shift($this->items);
-  }
+    /**
+    * Shift
+    * @return mixed
+    */
+    public function shift()
+    {
+        return array_shift($this->items);
+    }
 
-  public function unshift($item)
-  {
-      array_unshift($this->items, $item);
+    /**
+    * Unshift
+    * @param mixed $item
+    * @return $this
+    */
+    public function unshift($item) 
+    {
 
-      return $this;
-  }
+        array_unshift($this->items, $item);
+
+        return $this;
+    }
 
     /**
     * @param callable|null $callback
@@ -178,6 +217,10 @@ class ListCollection implements
         return $this->items[array_rand($this->all())];
     }
 
+    /**
+    * @param array $key
+    * @return Collective
+    */
     public function only(array $keys)
     {
         $items = array_intersect_key($this->all(), array_flip($keys));
@@ -185,6 +228,10 @@ class ListCollection implements
         return static::create($items);
     }
 
+    /**
+    * @param array $key
+    * @return Collective
+    */
     public function except(array $keys)
     {
         $items = array_diff_key($this->all(), array_flip($keys));
@@ -281,8 +328,11 @@ class ListCollection implements
 
         return static::create(array_combine($keys, $items));
     }
-
-    public function sortBy(callable $callback, $ascending = true)
+    
+    /**
+    * @{inheritdoc}
+    */
+    public function sortBy(callable $callback, $ascending = true) 
     {
         $results = $this->map($callback)->all();
 
@@ -300,18 +350,28 @@ class ListCollection implements
     public function sortByDesc(callable $callback)
     {
         return $this->sortBy($callback, false);
-    }
+    }   
 
+    /**
+    * @{inheritdoc}
+    */
     public function unique()
     {
         return static::create(array_unique($this->all(), SORT_REGULAR));
     }
 
+    /**
+    * Countable implementation
+    * @return int
+    */
     public function count()
     {
         return count($this->items);
     }
 
+    /**
+    * @{inheritdoc}
+    */
     public function toArray()
     {
         return array_map(function ($value) {
@@ -398,7 +458,4 @@ class ListCollection implements
     {
         return array_keys($this->all());
     }
-
-
-
 }
