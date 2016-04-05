@@ -217,6 +217,10 @@ class ListCollection implements
         return $this->items[array_rand($this->all())];
     }
 
+    /**
+    * @param array $key
+    * @return Collective
+    */
     public function only(array $keys)
     {
         $items = array_intersect_key($this->all(), array_flip($keys));
@@ -224,6 +228,10 @@ class ListCollection implements
         return static::create($items);
     }
 
+    /**
+    * @param array $key
+    * @return Collective
+    */
     public function except(array $keys)
     {
         $items = array_diff_key($this->all(), array_flip($keys));
@@ -352,7 +360,6 @@ class ListCollection implements
         return static::create(array_unique($this->all(), SORT_REGULAR));
     }
 
-
     /**
     * Countable implementation
     * @return int
@@ -361,7 +368,7 @@ class ListCollection implements
     {
         return count($this->items);
     }
-    
+
     /**
     * @{inheritdoc}
     */
