@@ -3,8 +3,8 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
+* Essential methods for implementation of collection
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 interface Collectible
 {
@@ -66,5 +66,30 @@ interface Collectible
      * @return int|string|false
      * */
     public function search($key);
+
+    /**
+     * Remove all elements for collections
+     * @return self
+     * */
+    public function clear();
+
+    /**
+    * Removes last item from items
+    * @return mixed
+    */
+    public function pop();
+
+    /**
+    * Remove first element of array
+    * @return mixed
+    */
+    public function shift();
+
+    /**
+    * Add an element at first position of collection
+    * @param mixed $item
+    * @return $this
+    */
+    public function unshift($item);
 
 }

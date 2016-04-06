@@ -3,8 +3,8 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
+ * Asserts if the collection contains a determined value
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- * 
  * */
 interface Validatable
 {

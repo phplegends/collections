@@ -730,5 +730,25 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	}
 
 
+	public function testOnlyAndExcept()
+	{
+		$collection = new Collection([
+			'nome'                => 'wallace',
+			'idade'               => 26,
+			'linguagem_principal' => 'PHP'
+		]);
+
+		$expected = ['nome' => 'wallace', 'idade' => 26];
+
+		$this->assertEquals(
+			$expected,
+			$collection->only(['nome', 'idade'])->all()
+		);
+
+		$this->assertEquals(
+			$expected,
+			$collection->except(['linguagem_principal'])->all()
+		);
+	}
 
 }

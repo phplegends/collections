@@ -3,6 +3,7 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
+ * Methods responsible for modifying data of collection (order, groups and filters)
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * */
 

@@ -8,6 +8,7 @@ use PHPLegends\Collections\Contracts\Accessible;
 use PHPLegends\Collections\Contracts\Collectible;
 
 /**
+* The Collection class
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 **/
 

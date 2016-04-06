@@ -3,7 +3,7 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
- * Interface for key value collection. Contract for use named keys in collection
+ * Sets that the Collection can be accessed and modified values by key / value
  * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * */

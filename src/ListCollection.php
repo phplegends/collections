@@ -11,19 +11,18 @@ use PHPLegends\Collections\Contracts\Validatable;
 use PHPLegends\Collections\Contracts\Collectible;
 
 /**
+ * Collection to work with list (array non-named)
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
- *
- * Collection to work with list (array without named keys)
- * 
  * */
 class ListCollection implements 
     Arrayable,
     Collectible,
     Countable,
+    IteratorAggregate,
     JsonSerializable,
     Modifiable,
-    Validatable,
-    IteratorAggregate
+    Validatable
+    
 {
     /**
     * @var
@@ -119,8 +118,7 @@ class ListCollection implements
     }
 
     /**
-    * Shift
-    * @return mixed
+    * @{inheritdoc}
     */
     public function shift()
     {
@@ -128,9 +126,7 @@ class ListCollection implements
     }
 
     /**
-    * Unshift
-    * @param mixed $item
-    * @return $this
+    * @{inheritdoc}
     */
     public function unshift($item) 
     {
@@ -140,6 +136,7 @@ class ListCollection implements
     }
 
     /**
+    * Retrieve a first item of collection. If callback passed, return first element based on callback
     * @param callable|null $callback
     * @return mixed
     */
@@ -157,8 +154,7 @@ class ListCollection implements
     }
 
     /**
-    * @param callable|null $callback
-    * @return Collection
+     * @{inheritdoc}
     */
     public function filter(callable $callback)
     {
@@ -168,9 +164,8 @@ class ListCollection implements
     }
 
     /**
-    * @param callable $callback
+     * @{inheritdoc}
     */
-
     public function reject(callable $callback)
     {
         return $this->filter(function ($value) use($callback)
@@ -180,7 +175,7 @@ class ListCollection implements
     }
 
     /**
-    * @return Collection
+     * @{inheritdoc}
     */
     public function reverse($preserveKeys = true)
     {
@@ -204,10 +199,10 @@ class ListCollection implements
     }
 
     /**
-    * @return Collection
+     * @{inheritdoc}
     */
-     public function shuffle()
-     {
+    public function shuffle()
+    {
         $items = $this->all();
 
         shuffle($items);
@@ -297,8 +292,7 @@ class ListCollection implements
     }
 
     /**
-    * @param callable|null $callback
-    * @return Collection
+     * @{inheritdoc}
     */
     public function sort(callable $callback = null)
     {   
@@ -309,6 +303,9 @@ class ListCollection implements
         return static::create($items);
     }
 
+    /**
+     * @{inheritdoc}
+    */
     public function chunk($size, $preserveKeys = true)
     {
         $chunks = static::create();
@@ -322,8 +319,7 @@ class ListCollection implements
     }
 
     /**
-    * @param callable|null $callback
-    * @return array
+     * @{inheritdoc}
     */
     public function map(callable $callback = null)
     {
@@ -354,6 +350,11 @@ class ListCollection implements
         return static::create($results);
     }
 
+    /**
+    * Sort elements in reverse order according to callback
+    * @param callable $callback
+    * @return self
+    */
     public function sortByDesc(callable $callback)
     {
         return $this->sortBy($callback, false);
@@ -395,9 +396,7 @@ class ListCollection implements
 
 
     /**
-    * Check if all elements return true in test of callback
-    * @param callable $callback - The callback must return the boolean type
-    * @return boolean
+    * @{inheritdoc}
     */
     public function every(callable $callback)
     {
@@ -409,9 +408,7 @@ class ListCollection implements
     }
 
     /**
-    * Some value returns true.
-    * @param callable $callback - The callback must return the boolean type
-    * @return boolean
+    * @{inheritdoc}
     */
     public function some(callable $callback)
     {
@@ -423,8 +420,7 @@ class ListCollection implements
     }
     
     /**
-    * Is empty?
-    * @return boolean
+    * @{inheritdoc}
     */
     public function isEmpty()
     {
@@ -432,7 +428,7 @@ class ListCollection implements
     }
 
     /**
-    * @return $this
+    * @{inheritdoc}
     */
     public function clear()
     {
@@ -441,9 +437,8 @@ class ListCollection implements
         return $this;
     }
 
-    /**
-    * Removes last item from items
-    * @return mixed
+     /**
+    * @{inheritdoc}
     */
     public function pop()
     {
