@@ -197,4 +197,13 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
 
         return static::create($items);
     }
+
+
+    /**
+     * @{inheritdoc}
+     * */
+    public function groupBy(callable $callback, $preserveKeys = true)
+    {
+        return parent::groupBy($callback, $preserveKeys);
+    }
 }

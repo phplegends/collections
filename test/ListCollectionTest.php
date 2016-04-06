@@ -179,5 +179,53 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 	{
 		return new ListCollection(['miguel', 'guilherme', 'wallace']);
 	}
+
+
+	public function testGroupBy()
+	{
+		$pessoas = new ListCollection();
+
+		$pessoas->add([
+			'nome'  => 'Alexa',
+			'idade' => 45,
+			'sexo'  => 'F'
+		]);
+
+		$pessoas->add([
+			'nome'  => 'Fernando',
+			'idade' => 33,
+			'sexo'  => 'M'
+		]);
+
+		$pessoas->add([
+			'nome'  => 'Wallace',
+			'idade' => 26,
+			'sexo'  => 'M'
+		]);
+
+		$pessoas->add([
+			'nome'  => 'Miguel',
+			'idade' => '?',
+			'sexo'  => 'M'
+		]);
+
+
+		$grupos = $pessoas->groupBy(function ($value, $key)
+		{
+			return $value['sexo'];
+		});
+
+		$this->assertTrue($grupos->has('M'));
+
+		$this->assertTrue($grupos->has('F'));
+
+		$this->assertCount(3, $grupos->get('M'));
+
+		$this->assertCount(1, $grupos->get('F'));
+
+		$this->assertEquals('Alexa', $grupos->get('F')->first()['nome']);
+
+		$this->assertEquals('Miguel', $grupos->get('M')->last()['nome']);
+	}
 }
 

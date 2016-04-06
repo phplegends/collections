@@ -683,5 +683,52 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 	}
 
 
+	public function testGroupBy()
+	{
+		$pessoas = new Collection();
+
+		$pessoas[] = [
+			'nome'  => 'Alexa',
+			'idade' => 45,
+			'sexo'  => 'F'
+		];
+
+		$pessoas[] = [
+			'nome'  => 'Fernando',
+			'idade' => 33,
+			'sexo'  => 'M'
+		];
+
+		$pessoas[] = [
+			'nome'  => 'Miguel',
+			'idade' => '?',
+			'sexo'  => 'M'
+		];
+
+		$pessoas[] = [
+			'nome'  => 'Wallace',
+			'idade' => 26,
+			'sexo'  => 'M'
+		];
+
+		$grupos = $pessoas->groupBy(function ($value, $key)
+		{
+			return $value['sexo'];
+		});
+
+		$this->assertTrue($grupos->has('M'));
+
+		$this->assertTrue($grupos->has('F'));
+
+		$this->assertCount(3, $grupos->get('M'));
+
+		$this->assertCount(1, $grupos->get('F'));
+
+		$this->assertEquals('Alexa', $grupos->get('F')->first()['nome']);
+
+		$this->assertEquals('Wallace', $grupos->get('M')->last()['nome']);
+	}
+
+
 
 }

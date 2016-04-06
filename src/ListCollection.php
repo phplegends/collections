@@ -39,6 +39,16 @@ class ListCollection implements
 	}
 
     /**
+     * Easy way for chainability
+     * @param array $items
+     * @return static
+     * */
+    public static function create(array $items = [])
+    {
+        return new static($items);
+    }
+
+    /**
     * @{inheritdoc}
     */
 	public function add($item)
@@ -124,7 +134,6 @@ class ListCollection implements
     */
     public function unshift($item) 
     {
-
         array_unshift($this->items, $item);
 
         return $this;
@@ -191,13 +200,10 @@ class ListCollection implements
             return end($this->items);
         }
 
-        foreach ($this->reverse()->all() as $key => $value)
-        {
-            if ($callback($value, $key, $this)) return $value;
-        }
+        return $this->reverse()->first($callback);
     }
 
-     /**
+    /**
     * @return Collection
     */
      public function shuffle()
@@ -277,15 +283,16 @@ class ListCollection implements
         return array_reduce($this->all(), $callback, $initial);
     }
 
-    public static function create(array $items = [])
-    {
-    	return new static($items);
-    }
-
+    /**
+     * @{inheritdoc}
+     * */
     public function slice($offset, $length = null, $preserveKeys = true)
     {
-        return new static(array_slice(
-            $this->all(), $offset, $length, $preserveKeys
+        return static::create(array_slice(
+            $this->all(), 
+            $offset,
+            $length,
+            $preserveKeys
         ));
     }
 
@@ -465,5 +472,28 @@ class ListCollection implements
     public function search($key)
     {
         return array_search($key, $this->all(), true);
+    }
+
+    /**
+     * @{inheritdoc}
+     * */
+
+    public function groupBy(callable $callback, $preserveKeys = false)
+    {
+        $groups = [];
+
+        foreach ($this->all() as $key => $value)
+        {
+            $groupKey = $callback($value, $key);
+
+            if (! isset($groups[$groupKey]))
+            {
+                $groups[$groupKey] = new Collection;
+            }
+
+            $groups[$groupKey][$preserveKeys ? $key : null] = $value;
+        }
+
+        return new Collection($groups);
     }
 }
