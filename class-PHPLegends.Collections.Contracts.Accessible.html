@@ -5,46 +5,70 @@
 
 	<title>Interface PHPLegends\Collections\Contracts\Accessible</title>
 
-	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
 
 </head>
 
 <body>
-<div id="left">
-	<div id="menu">
-		<a href="index.html" title="Overview"><span>Overview</span></a>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
 
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-PHPLegends.Collections.Contracts.html" title="Summary of PHPLegends\Collections\Contracts"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
 
 		<div id="groups">
 				<h3>Namespaces</h3>
 			<ul>
-				<li class="active">
-					<a href="namespace-PHPLegends.html">
-						PHPLegends<span></span>
-					</a>
-
-						<ul>
-				<li class="active">
-					<a href="namespace-PHPLegends.Collections.html">
-						Collections<span></span>
-					</a>
-
-						<ul>
-				<li class="active">
-					<a href="namespace-PHPLegends.Collections.Contracts.html">
-						Contracts					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PHPLegends.Collections.Exceptions.html">
-						Exceptions					</a>
-
-						</li>
-							</ul></li></ul></li>
+					<li class="active">
+						<a href="namespace-PHPLegends.html">
+							PHPLegends<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-PHPLegends.Collections.html">
+							Collections<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-PHPLegends.Collections.Contracts.html">
+							Contracts						</a>
+							</li>
+					<li>
+						<a href="namespace-PHPLegends.Collections.Exceptions.html">
+							Exceptions						</a>
+							</li>
+								</ul></li></ul></li>
 			</ul>
 		</div>
-
-		<hr>
 
 
 		<div id="elements">
@@ -68,36 +92,13 @@
 <div id="splitter"></div>
 
 <div id="right">
-<div id="rightInner">
-	<form id="search">
-		<input type="hidden" name="cx" value="">
-		<input type="hidden" name="ie" value="UTF-8">
-		<input type="text" name="q" class="text" placeholder="Search">
-	</form>
-
-	<div id="navigation">
-		<ul>
-			<li>
-				<a href="index.html" title="Overview"><span>Overview</span></a>
-			</li>
-			<li>
-				<a href="namespace-PHPLegends.Collections.Contracts.html" title="Summary of PHPLegends\Collections\Contracts"><span>Namespace</span></a>
-			</li>
-			<li class="active">
-<span>Class</span>			</li>
-		</ul>
-		<ul>
-		</ul>
-		<ul>
-		</ul>
-	</div>
-
+	<div id="rightInner">
 <div id="content" class="class">
 	<h1>Interface Accessible</h1>
 
 
 	<div class="description">
-	<p>Interface for key value collection. Contract for use named keys in collection</p>
+	<p>Sets that the Collection can be accessed and modified values by key / value</p>
 	</div>
 
 
@@ -105,19 +106,23 @@
 
 
 	<div>
-		<h4>Direct known implementers</h4>
-			<a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a>
+		<h3>Direct known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
+		</p>
 	</div>
 
 	<div>
-		<h4>Indirect known implementers</h4>
-			<a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a>, 
-			<a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a>
+		<h3>Indirect known implementers</h3>
+		<p class="elementList">
+			<code><a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a></code>, 
+			<code><a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a></code>
+		</p>
 	</div>
 
 
 
-	<div class="info">
+	<div class="alert alert-info">
 		
 		
 		<b>Namespace:</b> <a href="namespace-PHPLegends.html">PHPLegends</a>\<a href="namespace-PHPLegends.Collections.html">Collections</a>\<a href="namespace-PHPLegends.Collections.Contracts.html">Contracts</a><br>
@@ -131,398 +136,383 @@
 
 
 
-	<table class="summary methods" id="methods">
-	<caption>Methods summary</caption>
-	<tr data-order="set" id="_set">
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="set" id="_set">
 
-		<td class="attributes"><code>
-			 public 
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Accessible.html">PHPLegends\Collections\Contracts\Accessible</a></code>
+				
+				</code>
+			</td>
 
-			<code><a href="class-PHPLegends.Collections.Contracts.Accessible.html">PHPLegends\Collections\Contracts\Accessible</a></code>
-			
-			</code>
-		</td>
+			<td class="name"><div>
+			<a class="anchor" href="#_set">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#12-18" title="Go to source code">set</a>( <span>integer|key <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
 
-		<td class="name"><div>
-		<a class="anchor" href="#_set">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#12-18" title="Go to source code">set</a>( <span>integer|key <var>$key</var></span>, <span>mixed <var>$value</var></span> )</code>
+			<div class="description short">
+				<p>Description</p>
+			</div>
 
-		<div class="description short">
-			<p>Description</p>
+			<div class="description detailed hidden">
+				<p>Description</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Accessible.html">PHPLegends\Collections\Contracts\Accessible</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="get" id="_get">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_get">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#20-25" title="Go to source code">get</a>( <span>integer|key <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Description</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Description</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="has" id="_has">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_has">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#27-32" title="Go to source code">has</a>( <span>integer|string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Checks if key exists in Collection</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Checks if key exists in Collection</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="delete" id="_delete">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_delete">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#34-38" title="Go to source code">delete</a>( <span> <var>$key</var></span> )</code>
+
+			<div class="description short">
+				<p>Delete an item from Collection by index</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Delete an item from Collection by index</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="keys" id="_keys">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_keys">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#40-44" title="Go to source code">keys</a>( )</code>
+
+			<div class="description short">
+				<p>All keys of Collection</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>All keys of Collection</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="merge" id="_merge">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_merge">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#46-51" title="Go to source code">merge</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+						<dt><var>$recursive</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="replace" id="_replace">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_replace">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#53-59" title="Go to source code">replace</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				<p>Replaces items in Collection</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Replaces items in Collection</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+						<dt><var>$recursive</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="only" id="_only">
+
+			<td class="attributes"><code>
+				 public 
+				Collection
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_only">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#61-66" title="Go to source code">only</a>( <span>array <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				<p>Returns elements in collection specified in $keys</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns elements in collection specified in $keys</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$keys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Collection
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="except" id="_except">
+
+			<td class="attributes"><code>
+				 public 
+				Collection
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_except">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#68-73" title="Go to source code">except</a>( <span>array <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				<p>Returns all elements of Collection, except the specified in $keys</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Returns all elements of Collection, except the specified in $keys</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$keys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Collection
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sortByKeys" id="_sortByKeys">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sortByKeys">#</a>
+			<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#75-78" title="Go to source code">sortByKeys</a>( <span>boolean <var>$ascending</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$ascending</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+			</table>
 		</div>
-
-		<div class="description detailed hidden">
-			<p>Description</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-					<dt><var>$value</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Accessible.html">PHPLegends\Collections\Contracts\Accessible</a></code>
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="get" id="_get">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_get">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#20-25" title="Go to source code">get</a>( <span>integer|key <var>$key</var></span> )</code>
-
-		<div class="description short">
-			<p>Description</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Description</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="has" id="_has">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_has">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#27-32" title="Go to source code">has</a>( <span>integer|string <var>$key</var></span> )</code>
-
-		<div class="description short">
-			<p>Checks if key exists in Collection</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Checks if key exists in Collection</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="delete" id="_delete">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_delete">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#34-38" title="Go to source code">delete</a>( <span> <var>$key</var></span> )</code>
-
-		<div class="description short">
-			<p>Delete an item from Collection by index</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Delete an item from Collection by index</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="keys" id="_keys">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_keys">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#40-44" title="Go to source code">keys</a>( )</code>
-
-		<div class="description short">
-			<p>All keys of Collection</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>All keys of Collection</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="merge" id="_merge">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_merge">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#46-51" title="Go to source code">merge</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$items</var></dt>
-					<dd></dd>
-					<dt><var>$recursive</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="replace" id="_replace">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_replace">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#53-59" title="Go to source code">replace</a>( <span>array <var>$items</var></span>, <span>boolean <var>$recursive</var> = <span class="php-keyword1">false</span></span> )</code>
-
-		<div class="description short">
-			<p>Replaces items in Collection</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Replaces items in Collection</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$items</var></dt>
-					<dd></dd>
-					<dt><var>$recursive</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="only" id="_only">
-
-		<td class="attributes"><code>
-			 public 
-
-			Collection
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_only">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#61-66" title="Go to source code">only</a>( <span>array <var>$keys</var></span> )</code>
-
-		<div class="description short">
-			<p>Returns elements in collection specified in $keys</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Returns elements in collection specified in $keys</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					Collection
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="except" id="_except">
-
-		<td class="attributes"><code>
-			 public 
-
-			Collection
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_except">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#68-73" title="Go to source code">except</a>( <span>array <var>$keys</var></span> )</code>
-
-		<div class="description short">
-			<p>Returns all elements of Collection, except the specified in $keys</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Returns all elements of Collection, except the specified in $keys</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					Collection
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sortByKeys" id="_sortByKeys">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sortByKeys">#</a>
-		<code><a href="source-class-PHPLegends.Collections.Contracts.Accessible.html#75-78" title="Go to source code">sortByKeys</a>( <span>boolean <var>$ascending</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$ascending</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	</table>
-
-
-
-
-
-
-
 
 
 
@@ -535,11 +525,11 @@
 
 
 </div>
+	</div>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
-</div>
 </div>
 <script src="resources/combined.js"></script>
 <script src="elementlist.js"></script>

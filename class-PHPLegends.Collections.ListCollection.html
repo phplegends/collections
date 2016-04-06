@@ -5,46 +5,70 @@
 
 	<title>Class PHPLegends\Collections\ListCollection</title>
 
-	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+	<link rel="stylesheet" href="resources/bootstrap.min.css?973e37a8502921d56bc02bb55321f45b072b6f71">
+	<link rel="stylesheet" href="resources/style.css?49f43d3208c5d7e33fa16d36107a345bf11cc00d">
 
 </head>
 
 <body>
-<div id="left">
-	<div id="menu">
-		<a href="index.html" title="Overview"><span>Overview</span></a>
+	<nav id="navigation" class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="index.html" class="navbar-brand">Overview</a>
+			</div>
+			<div class="collapse navbar-collapse">
 
+                <form id="search" class="navbar-form navbar-left" role="search">
+                    <input type="hidden" name="cx" value="">
+                    <input type="hidden" name="ie" value="UTF-8">
+                    <div class="form-group">
+                        <input type="text" name="q" class="search-query form-control" placeholder="Search">
+					</div>
+				</form>
+
+				<ul class="nav navbar-nav">
+					<li>
+						<a href="namespace-PHPLegends.Collections.html" title="Summary of PHPLegends\Collections"><span>Namespace</span></a>
+					</li>
+					<li class="active">
+<span>Class</span>					</li>
+
+
+
+
+
+				</ul>
+			</div>
+		</div>
+	</nav>
+
+	<div id="left">
+	<div id="menu">
 
 		<div id="groups">
 				<h3>Namespaces</h3>
 			<ul>
-				<li class="active">
-					<a href="namespace-PHPLegends.html">
-						PHPLegends<span></span>
-					</a>
-
-						<ul>
-				<li class="active">
-					<a href="namespace-PHPLegends.Collections.html">
-						Collections<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-PHPLegends.Collections.Contracts.html">
-						Contracts					</a>
-
-						</li>
-				<li>
-					<a href="namespace-PHPLegends.Collections.Exceptions.html">
-						Exceptions					</a>
-
-						</li>
-							</ul></li></ul></li>
+					<li class="active">
+						<a href="namespace-PHPLegends.html">
+							PHPLegends<span></span>
+						</a>
+							<ul>
+					<li class="active">
+						<a href="namespace-PHPLegends.Collections.html">
+							Collections<span></span>
+						</a>
+							<ul>
+					<li>
+						<a href="namespace-PHPLegends.Collections.Contracts.html">
+							Contracts						</a>
+							</li>
+					<li>
+						<a href="namespace-PHPLegends.Collections.Exceptions.html">
+							Exceptions						</a>
+							</li>
+								</ul></li></ul></li>
 			</ul>
 		</div>
-
-		<hr>
 
 
 		<div id="elements">
@@ -67,36 +91,16 @@
 <div id="splitter"></div>
 
 <div id="right">
-<div id="rightInner">
-	<form id="search">
-		<input type="hidden" name="cx" value="">
-		<input type="hidden" name="ie" value="UTF-8">
-		<input type="text" name="q" class="text" placeholder="Search">
-	</form>
-
-	<div id="navigation">
-		<ul>
-			<li>
-				<a href="index.html" title="Overview"><span>Overview</span></a>
-			</li>
-			<li>
-				<a href="namespace-PHPLegends.Collections.html" title="Summary of PHPLegends\Collections"><span>Namespace</span></a>
-			</li>
-			<li class="active">
-<span>Class</span>			</li>
-		</ul>
-		<ul>
-		</ul>
-		<ul>
-		</ul>
-	</div>
-
+	<div id="rightInner">
 <div id="content" class="class">
 	<h1>Class ListCollection</h1>
 
 
+	<div class="description">
+	<p>Collection to work with list (array non-named)</p>
+	</div>
 
-	<dl class="tree">
+	<dl class="tree well">
 		<dd style="padding-left:0px">
 <b><span>PHPLegends\Collections\ListCollection</span></b>			
 			 implements 
@@ -106,13 +110,13 @@
 			
 <span>Countable</span>, 
 			
+<span>IteratorAggregate</span>, 
+			
 <span>JsonSerializable</span>, 
 			
 				<a href="class-PHPLegends.Collections.Contracts.Modifiable.html"><span>PHPLegends\Collections\Contracts\Modifiable</span></a>, 
 			
-				<a href="class-PHPLegends.Collections.Contracts.Validatable.html"><span>PHPLegends\Collections\Contracts\Validatable</span></a>, 
-			
-<span>IteratorAggregate</span>
+				<a href="class-PHPLegends.Collections.Contracts.Validatable.html"><span>PHPLegends\Collections\Contracts\Validatable</span></a>
 			
 			
 		</dd>
@@ -120,1672 +124,53 @@
 
 
 	<div>
-		<h4>Direct known subclasses</h4>
-			<a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a>
+		<h3>Direct known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
+		</p>
 	</div>
 
 	<div>
-		<h4>Indirect known subclasses</h4>
-			<a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a>, 
-			<a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a>
+		<h3>Indirect known subclasses</h3>
+		<p class="elementList">
+			<code><a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a></code>, 
+			<code><a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a></code>
+		</p>
 	</div>
 
 
 
 
 
-	<div class="info">
+	<div class="alert alert-info">
 		
 		
 		<b>Namespace:</b> <a href="namespace-PHPLegends.html">PHPLegends</a>\<a href="namespace-PHPLegends.Collections.html">Collections</a><br>
 		
 
 				<b>Author:</b>
-				<p>Wallace de Souza Vizerra <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;">&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;</a></p>
-
-<p>Collection to work with list (array without named keys)</p><br>
-			<b>Located at</b> <a href="source-class-PHPLegends.Collections.ListCollection.html#13-469" title="Go to source code">ListCollection.php</a>
+				Wallace de Souza Vizerra <a href="&#x6d;&#97;&#105;l&#x74;&#x6f;&#58;&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;">&#119;&#x61;&#x6c;&#108;&#97;c&#x65;&#109;&#97;x&#x74;&#x65;&#114;&#115;&#x40;&#x67;&#109;&#97;i&#x6c;&#x2e;&#99;&#111;&#x6d;</a><br>
+			<b>Located at</b> <a href="source-class-PHPLegends.Collections.ListCollection.html#13-494" title="Go to source code">ListCollection.php</a>
 		<br>
 	</div>
 
 
 
-	<table class="summary methods" id="methods">
-	<caption>Methods summary</caption>
-	<tr data-order="__construct" id="___construct">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#___construct">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#33-39" title="Go to source code">__construct</a>( <span>array <var>$items</var> = []</span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$items</var></dt>
-					<dd>$item</dd>
-				</dl></div>
-
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#___construct">PHPLegends\Collections\Contracts\Collectible::__construct()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="add" id="_add">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_add">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#41-49" title="Go to source code">add</a>( <span>mixed <var>$item</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_add">PHPLegends\Collections\Contracts\Collectible::add()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="all" id="_all">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_all">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#51-57" title="Go to source code">all</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_all">PHPLegends\Collections\Contracts\Collectible::all()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="setItems" id="_setItems">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_setItems">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#59-67" title="Go to source code">setItems</a>( <span>array <var>$items</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="addAll" id="_addAll">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_addAll">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#69-77" title="Go to source code">addAll</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$collection</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_addAll">PHPLegends\Collections\Contracts\Collectible::addAll()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="removeAll" id="_removeAll">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_removeAll">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#79-87" title="Go to source code">removeAll</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$collection</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_removeAll">PHPLegends\Collections\Contracts\Collectible::removeAll()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="remove" id="_remove">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_remove">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#89-101" title="Go to source code">remove</a>( <span> <var>$value</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$value</var></dt>
-					<dd></dd>
-				</dl></div>
-
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_remove">PHPLegends\Collections\Contracts\Collectible::remove()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="contains" id="_contains">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_contains">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#103-109" title="Go to source code">contains</a>( <span> <var>$value</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$value</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_contains">PHPLegends\Collections\Contracts\Collectible::contains()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="shift" id="_shift">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_shift">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#111-118" title="Go to source code">shift</a>( )</code>
-
-		<div class="description short">
-			<p>Shift</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Shift</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="unshift" id="_unshift">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_unshift">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#120-131" title="Go to source code">unshift</a>( <span>mixed <var>$item</var></span> )</code>
-
-		<div class="description short">
-			<p>Unshift</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Unshift</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$item</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="first" id="_first">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_first">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#133-148" title="Go to source code">first</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="filter" id="_filter">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_filter">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#150-159" title="Go to source code">filter</a>( <span>callable <var>$callback</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_filter">PHPLegends\Collections\Contracts\Modifiable::filter()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="reject" id="_reject">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_reject">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#162-171" title="Go to source code">reject</a>( <span>callable <var>$callback</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_reject">PHPLegends\Collections\Contracts\Modifiable::reject()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="reverse" id="_reverse">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_reverse">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#173-181" title="Go to source code">reverse</a>( <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$preserveKeys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_reverse">PHPLegends\Collections\Contracts\Modifiable::reverse()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="last" id="_last">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_last">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#183-198" title="Go to source code">last</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="shuffle" id="_shuffle">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_shuffle">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#200-210" title="Go to source code">shuffle</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_shuffle">PHPLegends\Collections\Contracts\Modifiable::shuffle()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="randomItem" id="_randomItem">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_randomItem">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#212-218" title="Go to source code">randomItem</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="only" id="_only">
-
-		<td class="attributes"><code>
-			 public 
-
-			Collective
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_only">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#220-229" title="Go to source code">only</a>( <span>array <var>$keys</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
-					<dd>$key</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					Collective
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="except" id="_except">
-
-		<td class="attributes"><code>
-			 public 
-
-			Collective
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_except">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#231-240" title="Go to source code">except</a>( <span>array <var>$keys</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$keys</var></dt>
-					<dd>$key</dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					Collective
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="jsonSerialize" id="_jsonSerialize">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_jsonSerialize">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#242-248" title="Go to source code">jsonSerialize</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code>JsonSerializable::jsonSerialize()</code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="intersect" id="_intersect">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_intersect">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#250-258" title="Go to source code">intersect</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$collection</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_intersect">PHPLegends\Collections\Contracts\Modifiable::intersect()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="diff" id="_diff">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_diff">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#260-268" title="Go to source code">diff</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$collection</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_diff">PHPLegends\Collections\Contracts\Modifiable::diff()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="reduce" id="_reduce">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_reduce">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#270-278" title="Go to source code">reduce</a>( <span>callable <var>$callback</var></span>, <span>mixed|null <var>$initial</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-					<dt><var>$initial</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="create" id="_create">
-
-		<td class="attributes"><code>
-			 public static
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_create">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#280-283" title="Go to source code">create</a>( <span>array <var>$items</var> = []</span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="slice" id="_slice">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_slice">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#285-290" title="Go to source code">slice</a>( <span>integer <var>$offset</var></span>, <span>null|integer <var>$length</var> = <span class="php-keyword1">null</span></span>, <span> <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			<p>Returns the slice for collection</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Returns the slice for collection</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$offset</var></dt>
-					<dd></dd>
-					<dt><var>$length</var></dt>
-					<dd>$limit</dd>
-					<dt><var>$preserveKeys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_slice">PHPLegends\Collections\Contracts\Modifiable::slice()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sort" id="_sort">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sort">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#292-303" title="Go to source code">sort</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_sort">PHPLegends\Collections\Contracts\Modifiable::sort()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="chunk" id="_chunk">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_chunk">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#305-315" title="Go to source code">chunk</a>( <span>integer <var>$size</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$size</var></dt>
-					<dd></dd>
-					<dt><var>$preserveKeys</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></code>
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_chunk">PHPLegends\Collections\Contracts\Modifiable::chunk()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="map" id="_map">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_map">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#317-330" title="Go to source code">map</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_map">PHPLegends\Collections\Contracts\Modifiable::map()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sortBy" id="_sortBy">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sortBy">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#332-348" title="Go to source code">sortBy</a>( <span>callable <var>$callback</var></span>, <span>boolean <var>$ascending</var> = <span class="php-keyword1">true</span></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd></dd>
-					<dt><var>$ascending</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_sortBy">PHPLegends\Collections\Contracts\Modifiable::sortBy()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="sortByDesc" id="_sortByDesc">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_sortByDesc">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#350-353" title="Go to source code">sortByDesc</a>( <span>callable <var>$callback</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="unique" id="_unique">
-
-		<td class="attributes"><code>
-			 public 
-
-			<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_unique">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#355-361" title="Go to source code">unique</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_unique">PHPLegends\Collections\Contracts\Modifiable::unique()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="count" id="_count">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_count">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#363-370" title="Go to source code">count</a>( )</code>
-
-		<div class="description short">
-			<p>Countable implementation</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Countable implementation</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code>Countable::count()</code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="toArray" id="_toArray">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_toArray">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#372-387" title="Go to source code">toArray</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Arrayable.html#_toArray">PHPLegends\Collections\Contracts\Arrayable::toArray()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="every" id="_every">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_every">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#390-402" title="Go to source code">every</a>( <span>callable <var>$callback</var></span> )</code>
-
-		<div class="description short">
-			<p>Check if all elements return true in test of callback</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Check if all elements return true in test of callback</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd><ul>
-<li>The callback must return the boolean type</li>
-</ul></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_every">PHPLegends\Collections\Contracts\Validatable::every()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="some" id="_some">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_some">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#404-416" title="Go to source code">some</a>( <span>callable <var>$callback</var></span> )</code>
-
-		<div class="description short">
-			<p>Some value returns true.</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Some value returns true.</p>
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$callback</var></dt>
-					<dd><ul>
-<li>The callback must return the boolean type</li>
-</ul></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_some">PHPLegends\Collections\Contracts\Validatable::some()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="isEmpty" id="_isEmpty">
-
-		<td class="attributes"><code>
-			 public 
-
-			boolean
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_isEmpty">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#418-425" title="Go to source code">isEmpty</a>( )</code>
-
-		<div class="description short">
-			<p>Is empty?</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Is empty?</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					boolean
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_isEmpty">PHPLegends\Collections\Contracts\Validatable::isEmpty()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="clear" id="_clear">
-
-		<td class="attributes"><code>
-			 public 
-
-			
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_clear">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#427-435" title="Go to source code">clear</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					<br>$this
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="pop" id="_pop">
-
-		<td class="attributes"><code>
-			 public 
-
-			mixed
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_pop">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#437-444" title="Go to source code">pop</a>( )</code>
-
-		<div class="description short">
-			<p>Removes last item from items</p>
-		</div>
-
-		<div class="description detailed hidden">
-			<p>Removes last item from items</p>
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					mixed
-				</div>
-
-
-
-
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="getIterator" id="_getIterator">
-
-		<td class="attributes"><code>
-			 public 
-
-			ArrayIterator
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_getIterator">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#446-452" title="Go to source code">getIterator</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					ArrayIterator
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code>IteratorAggregate::getIterator()</code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="keys" id="_keys">
-
-		<td class="attributes"><code>
-			 public 
-
-			array
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_keys">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#454-460" title="Go to source code">keys</a>( )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-
-				<h4>Returns</h4>
-				<div class="list">
-					array
-				</div>
-
-
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_keys">PHPLegends\Collections\Contracts\Collectible::keys()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	<tr data-order="search" id="_search">
-
-		<td class="attributes"><code>
-			 public 
-
-			integer|string|false
-			
-			</code>
-		</td>
-
-		<td class="name"><div>
-		<a class="anchor" href="#_search">#</a>
-		<code><a href="source-class-PHPLegends.Collections.ListCollection.html#462-468" title="Go to source code">search</a>( <span>integer|string <var>$key</var></span> )</code>
-
-		<div class="description short">
-			
-		</div>
-
-		<div class="description detailed hidden">
-			
-
-
-				<h4>Parameters</h4>
-				<div class="list"><dl>
-					<dt><var>$key</var></dt>
-					<dd></dd>
-				</dl></div>
-
-				<h4>Returns</h4>
-				<div class="list">
-					integer|string|false
-				</div>
-
-
-				<h4>{inheritdoc}</h4>
-				<div class="list">
-				</div>
-
-
-				<h4>Implementation of</h4>
-				<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_search">PHPLegends\Collections\Contracts\Collectible::search()</a></code></div>
-		</div>
-		</div></td>
-	</tr>
-	</table>
-
-
-
-
-
-
-
-
-
-
-
-
-	<table class="summary properties" id="properties">
-	<caption>Properties summary</caption>
-	<tr data-order="items" id="$items">
-		<td class="attributes"><code>
-			protected  
-			array
-		</code></td>
-
-		<td class="name">
-				<a href="source-class-PHPLegends.Collections.ListCollection.html#28-31" title="Go to source code"><var>$items</var></a>
+		<div class="panel panel-default">
+			<div class="panel-heading"><h2>Methods summary</h2></div>
+			<table class="summary table table-bordered table-striped methods" id="methods">
+		<tr data-order="__construct" id="___construct">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#___construct">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#32-38" title="Go to source code">__construct</a>( <span>array <var>$items</var> = []</span> )</code>
 
 			<div class="description short">
 				
@@ -1794,16 +179,1711 @@
 			<div class="description detailed hidden">
 				
 
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd>$item</dd>
+					</dl></div>
+
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#___construct">PHPLegends\Collections\Contracts\Collectible::__construct()</a></code></div>
 			</div>
-		</td>
-		<td class="value">
-			<div>
-				<a href="#$items" class="anchor">#</a>
-				<code>[]</code>
+			</div></td>
+		</tr>
+		<tr data-order="create" id="_create">
+
+			<td class="attributes"><code>
+				 public static
+				static
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_create">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#40-48" title="Go to source code">create</a>( <span>array <var>$items</var> = []</span> )</code>
+
+			<div class="description short">
+				<p>Easy way for chainability</p>
 			</div>
-		</td>
-	</tr>
-	</table>
+
+			<div class="description detailed hidden">
+				<p>Easy way for chainability</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$items</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						static
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="add" id="_add">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_add">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#50-58" title="Go to source code">add</a>( <span>mixed <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_add">PHPLegends\Collections\Contracts\Collectible::add()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="all" id="_all">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_all">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#60-66" title="Go to source code">all</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_all">PHPLegends\Collections\Contracts\Collectible::all()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="setItems" id="_setItems">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_setItems">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#68-76" title="Go to source code">setItems</a>( <span>array <var>$items</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="addAll" id="_addAll">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_addAll">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#78-86" title="Go to source code">addAll</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$collection</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_addAll">PHPLegends\Collections\Contracts\Collectible::addAll()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="removeAll" id="_removeAll">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_removeAll">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#88-96" title="Go to source code">removeAll</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$collection</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_removeAll">PHPLegends\Collections\Contracts\Collectible::removeAll()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="remove" id="_remove">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_remove">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#98-110" title="Go to source code">remove</a>( <span> <var>$value</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_remove">PHPLegends\Collections\Contracts\Collectible::remove()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="contains" id="_contains">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_contains">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#112-118" title="Go to source code">contains</a>( <span> <var>$value</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$value</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_contains">PHPLegends\Collections\Contracts\Collectible::contains()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="shift" id="_shift">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_shift">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#120-126" title="Go to source code">shift</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_shift">PHPLegends\Collections\Contracts\Collectible::shift()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="unshift" id="_unshift">
+
+			<td class="attributes"><code>
+				 public 
+				
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_unshift">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#128-136" title="Go to source code">unshift</a>( <span>mixed <var>$item</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$item</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<br>$this
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_unshift">PHPLegends\Collections\Contracts\Collectible::unshift()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="first" id="_first">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_first">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#138-154" title="Go to source code">first</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				<p>Retrieve a first item of collection. If callback passed, return first element based on callback</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Retrieve a first item of collection. If callback passed, return first element based on callback</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="filter" id="_filter">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_filter">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#156-164" title="Go to source code">filter</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_filter">PHPLegends\Collections\Contracts\Modifiable::filter()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reject" id="_reject">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reject">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#166-175" title="Go to source code">reject</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_reject">PHPLegends\Collections\Contracts\Modifiable::reject()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reverse" id="_reverse">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reverse">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#177-185" title="Go to source code">reverse</a>( <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_reverse">PHPLegends\Collections\Contracts\Modifiable::reverse()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="last" id="_last">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_last">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#187-199" title="Go to source code">last</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="shuffle" id="_shuffle">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_shuffle">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#201-211" title="Go to source code">shuffle</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_shuffle">PHPLegends\Collections\Contracts\Modifiable::shuffle()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="randomItem" id="_randomItem">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_randomItem">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#213-219" title="Go to source code">randomItem</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="only" id="_only">
+
+			<td class="attributes"><code>
+				 public 
+				Collective
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_only">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#221-230" title="Go to source code">only</a>( <span>array <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$keys</var></dt>
+						<dd>$key</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Collective
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="except" id="_except">
+
+			<td class="attributes"><code>
+				 public 
+				Collective
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_except">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#232-241" title="Go to source code">except</a>( <span>array <var>$keys</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$keys</var></dt>
+						<dd>$key</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						Collective
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="jsonSerialize" id="_jsonSerialize">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_jsonSerialize">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#243-249" title="Go to source code">jsonSerialize</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>JsonSerializable::jsonSerialize()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="intersect" id="_intersect">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_intersect">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#251-259" title="Go to source code">intersect</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$collection</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_intersect">PHPLegends\Collections\Contracts\Modifiable::intersect()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="diff" id="_diff">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_diff">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#261-269" title="Go to source code">diff</a>( <span><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code> <var>$collection</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$collection</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_diff">PHPLegends\Collections\Contracts\Modifiable::diff()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="reduce" id="_reduce">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_reduce">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#271-279" title="Go to source code">reduce</a>( <span>callable <var>$callback</var></span>, <span>mixed|null <var>$initial</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$initial</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="slice" id="_slice">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_slice">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#281-292" title="Go to source code">slice</a>( <span>integer <var>$offset</var></span>, <span>null|integer <var>$length</var> = <span class="php-keyword1">null</span></span>, <span> <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$offset</var></dt>
+						<dd></dd>
+						<dt><var>$length</var></dt>
+						<dd>$limit</dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_slice">PHPLegends\Collections\Contracts\Modifiable::slice()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sort" id="_sort">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sort">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#294-304" title="Go to source code">sort</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd>$callback|null</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_sort">PHPLegends\Collections\Contracts\Modifiable::sort()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="chunk" id="_chunk">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_chunk">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#306-319" title="Go to source code">chunk</a>( <span>integer <var>$size</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$size</var></dt>
+						<dd></dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_chunk">PHPLegends\Collections\Contracts\Modifiable::chunk()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="map" id="_map">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_map">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#321-333" title="Go to source code">map</a>( <span>callable <var>$callback</var> = <span class="php-keyword1">null</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd>$callback|null</dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_map">PHPLegends\Collections\Contracts\Modifiable::map()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sortBy" id="_sortBy">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sortBy">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#335-351" title="Go to source code">sortBy</a>( <span>callable <var>$callback</var></span>, <span>boolean <var>$ascending</var> = <span class="php-keyword1">true</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$ascending</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_sortBy">PHPLegends\Collections\Contracts\Modifiable::sortBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="sortByDesc" id="_sortByDesc">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.ListCollection.html">PHPLegends\Collections\ListCollection</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_sortByDesc">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#353-361" title="Go to source code">sortByDesc</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				<p>Sort elements in reverse order according to callback</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Sort elements in reverse order according to callback</p>
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.ListCollection.html">PHPLegends\Collections\ListCollection</a></code>
+					</div>
+
+
+
+
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="unique" id="_unique">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_unique">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#363-369" title="Go to source code">unique</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_unique">PHPLegends\Collections\Contracts\Modifiable::unique()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="count" id="_count">
+
+			<td class="attributes"><code>
+				 public 
+				integer
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_count">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#371-378" title="Go to source code">count</a>( )</code>
+
+			<div class="description short">
+				<p>Countable implementation</p>
+			</div>
+
+			<div class="description detailed hidden">
+				<p>Countable implementation</p>
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>Countable::count()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="toArray" id="_toArray">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_toArray">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#380-395" title="Go to source code">toArray</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Arrayable.html#_toArray">PHPLegends\Collections\Contracts\Arrayable::toArray()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="every" id="_every">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_every">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#398-408" title="Go to source code">every</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_every">PHPLegends\Collections\Contracts\Validatable::every()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="some" id="_some">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_some">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#410-420" title="Go to source code">some</a>( <span>callable <var>$callback</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_some">PHPLegends\Collections\Contracts\Validatable::some()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="isEmpty" id="_isEmpty">
+
+			<td class="attributes"><code>
+				 public 
+				boolean
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_isEmpty">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#422-428" title="Go to source code">isEmpty</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						boolean
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Validatable.html#_isEmpty">PHPLegends\Collections\Contracts\Validatable::isEmpty()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="clear" id="_clear">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.ListCollection.html">PHPLegends\Collections\ListCollection</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_clear">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#430-438" title="Go to source code">clear</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.ListCollection.html">PHPLegends\Collections\ListCollection</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_clear">PHPLegends\Collections\Contracts\Collectible::clear()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="pop" id="_pop">
+
+			<td class="attributes"><code>
+				 public 
+				mixed
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_pop">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#440-446" title="Go to source code">pop</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						mixed
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_pop">PHPLegends\Collections\Contracts\Collectible::pop()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="getIterator" id="_getIterator">
+
+			<td class="attributes"><code>
+				 public 
+				ArrayIterator
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_getIterator">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#448-454" title="Go to source code">getIterator</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						ArrayIterator
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code>IteratorAggregate::getIterator()</code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="keys" id="_keys">
+
+			<td class="attributes"><code>
+				 public 
+				array
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_keys">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#456-462" title="Go to source code">keys</a>( )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+
+					<h4>Returns</h4>
+					<div class="list">
+						array
+					</div>
+
+
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_keys">PHPLegends\Collections\Contracts\Collectible::keys()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="search" id="_search">
+
+			<td class="attributes"><code>
+				 public 
+				integer|string|false
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_search">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#464-470" title="Go to source code">search</a>( <span>integer|string <var>$key</var></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$key</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						integer|string|false
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Collectible.html#_search">PHPLegends\Collections\Contracts\Collectible::search()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+		<tr data-order="groupBy" id="_groupBy">
+
+			<td class="attributes"><code>
+				 public 
+				<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+				
+				</code>
+			</td>
+
+			<td class="name"><div>
+			<a class="anchor" href="#_groupBy">#</a>
+			<code><a href="source-class-PHPLegends.Collections.ListCollection.html#473-493" title="Go to source code">groupBy</a>( <span>callable <var>$callback</var></span>, <span>boolean <var>$preserveKeys</var> = <span class="php-keyword1">false</span></span> )</code>
+
+			<div class="description short">
+				
+			</div>
+
+			<div class="description detailed hidden">
+				
+
+
+					<h4>Parameters</h4>
+					<div class="list"><dl>
+						<dt><var>$callback</var></dt>
+						<dd></dd>
+						<dt><var>$preserveKeys</var></dt>
+						<dd></dd>
+					</dl></div>
+
+					<h4>Returns</h4>
+					<div class="list">
+						<code><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></code>
+					</div>
+
+
+					<h4>{inheritdoc}</h4>
+					<div class="list">
+					</div>
+
+
+					<h4>Implementation of</h4>
+					<div class="list"><code><a href="class-PHPLegends.Collections.Contracts.Modifiable.html#_groupBy">PHPLegends\Collections\Contracts\Modifiable::groupBy()</a></code></div>
+			</div>
+			</div></td>
+		</tr>
+			</table>
+		</div>
+
+
+
+
+
+
+
+
+
+
+
+		<div class="panel panel-default">
+            <div class="panel-heading"><h2>Properties summary</h2></div>
+			<table class="summary table table-bordered table-striped properties" id="properties">
+		<tr data-order="items" id="$items">
+			<td class="attributes"><code>
+				protected  
+				array
+			</code></td>
+
+			<td class="name">
+					<a href="source-class-PHPLegends.Collections.ListCollection.html#27-30" title="Go to source code"><var>$items</var></a>
+
+				<div class="description short">
+					
+				</div>
+
+				<div class="description detailed hidden">
+					
+
+				</div>
+			</td>
+			<td class="value">
+				<div>
+					<a href="#$items" class="anchor">#</a>
+					<code>[]</code>
+				</div>
+			</td>
+		</tr>
+			</table>
+		</div>
 
 
 
@@ -1811,11 +1891,11 @@
 
 
 </div>
+	</div>
 
 	<div id="footer">
 		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
 	</div>
-</div>
 </div>
 <script src="resources/combined.js"></script>
 <script src="elementlist.js"></script>
