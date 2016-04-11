@@ -4,7 +4,6 @@ namespace PHPLegends\Collections;
 
 /**
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
-* 
 */
 class MathCollection extends Collection
 {

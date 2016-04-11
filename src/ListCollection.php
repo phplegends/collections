@@ -69,7 +69,9 @@ class ListCollection implements
     * @{inheritdoc}
     */
     public function setItems(array $items)
-    {
+    {   
+        $this->clear();
+        
         array_map([$this, 'add'], $items);
 
         return $this;

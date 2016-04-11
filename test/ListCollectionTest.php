@@ -227,5 +227,26 @@ class ListCollectionTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals('Miguel', $grupos->get('M')->last()['nome']);
 	}
+
+
+
+	public function testSetItems()
+	{
+		$collection = $this->createStringCollection();
+
+		$this->assertCount(3, $collection);
+
+		$collection->setItems([]);
+
+		$this->assertCount(0, $collection);
+
+		$collection->setItems(['nome' => 'Wallace']);
+
+		$this->assertCount(1, $collection);
+
+		// Test drop keys :)
+
+		$this->assertEquals([0], $collection->keys());
+	}
 }
 
