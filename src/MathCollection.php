@@ -36,7 +36,7 @@ class MathCollection extends Collection
 			return max($this->all());
 		}
 
-		return max($this->map($callback)->all());
+		return max(array_map($callback, $this->all()));
 	}
 
 	/**
@@ -50,7 +50,7 @@ class MathCollection extends Collection
 			return min($this->all());
 		}
 
-		return min($this->map($callback)->all());
+		return min(array_map($callback, $this->all()));
 	}
 
 	/**
