@@ -102,7 +102,7 @@ class ListCollection implements
     */
     public function remove($value)
     {
-        $key = array_search($value, $this->items, true);
+        $key = $this->search($value);
 
         if ($key === false) return null;
 
@@ -116,7 +116,7 @@ class ListCollection implements
     */
     public function contains($value)
     {
-        return array_search($value, $this->items, true) !== false;
+        return $this->search($value) !== false;
     }
 
     /**
