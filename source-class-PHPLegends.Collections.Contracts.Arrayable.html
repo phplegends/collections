@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="generator" content="ApiGen 2.8.0">
 	<meta name="robots" content="noindex">
 
 	<title>File Contracts/Arrayable.php</title>
 
-	<link rel="stylesheet" href="resources/style.css?e99947befd7bf673c6b43ff75e9e0f170c88a60e">
+	<script type="text/javascript" src="resources/combined.js?3770084987"></script>
+	<script type="text/javascript" src="elementlist.js?388136919"></script>
+	<link rel="stylesheet" type="text/css" media="all" href="resources/style.css?3505392360">
 
 </head>
 
@@ -17,29 +20,17 @@
 
 
 		<div id="groups">
-				<h3>Namespaces</h3>
+			<h3>Namespaces</h3>
 			<ul>
-				<li>
-					<a href="namespace-PHPLegends.html">
-						PHPLegends<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-PHPLegends.Collections.html">
-						Collections<span></span>
-					</a>
-
-						<ul>
-				<li>
-					<a href="namespace-PHPLegends.Collections.Contracts.html">
-						Contracts					</a>
-
+				<li><a href="namespace-PHP.html">PHP</a>
 						</li>
-				<li>
-					<a href="namespace-PHPLegends.Collections.Exceptions.html">
-						Exceptions					</a>
-
+				<li class="active"><a href="namespace-PHPLegends.html">PHPLegends<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-PHPLegends.Collections.html">Collections<span></span></a>
+						<ul>
+				<li class="active"><a href="namespace-PHPLegends.Collections.Contracts.html">Contracts</a>
+						</li>
+				<li><a href="namespace-PHPLegends.Collections.Exceptions.html">Exceptions</a>
 						</li>
 							</ul></li></ul></li>
 			</ul>
@@ -49,28 +40,17 @@
 
 
 		<div id="elements">
-			<h3>Classes</h3>
-			<ul>
-				<li><a href="class-PHPLegends.Collections.Collection.html">PHPLegends\Collections\Collection</a></li>
-				<li><a href="class-PHPLegends.Collections.ListCollection.html">PHPLegends\Collections\ListCollection</a></li>
-				<li><a href="class-PHPLegends.Collections.MathCollection.html">PHPLegends\Collections\MathCollection</a></li>
-				<li><a href="class-PHPLegends.Collections.RecursiveCollection.html">PHPLegends\Collections\RecursiveCollection</a></li>
-			</ul>
 
 			<h3>Interfaces</h3>
 			<ul>
-				<li><a href="class-PHPLegends.Collections.Contracts.Accessible.html">PHPLegends\Collections\Contracts\Accessible</a></li>
-				<li><a href="class-PHPLegends.Collections.Contracts.Arrayable.html">PHPLegends\Collections\Contracts\Arrayable</a></li>
-				<li><a href="class-PHPLegends.Collections.Contracts.Collectible.html">PHPLegends\Collections\Contracts\Collectible</a></li>
-				<li><a href="class-PHPLegends.Collections.Contracts.Modifiable.html">PHPLegends\Collections\Contracts\Modifiable</a></li>
-				<li><a href="class-PHPLegends.Collections.Contracts.Validatable.html">PHPLegends\Collections\Contracts\Validatable</a></li>
+				<li><a href="class-PHPLegends.Collections.Contracts.Accessible.html">Accessible</a></li>
+				<li class="active"><a href="class-PHPLegends.Collections.Contracts.Arrayable.html">Arrayable</a></li>
+				<li><a href="class-PHPLegends.Collections.Contracts.Collectible.html">Collectible</a></li>
+				<li><a href="class-PHPLegends.Collections.Contracts.Modifiable.html">Modifiable</a></li>
+				<li><a href="class-PHPLegends.Collections.Contracts.Validatable.html">Validatable</a></li>
 			</ul>
 
 
-			<h3>Exceptions</h3>
-			<ul>
-				<li><a href="class-PHPLegends.Collections.Exceptions.CollectionException.html">PHPLegends\Collections\Exceptions\CollectionException</a></li>
-			</ul>
 
 
 		</div>
@@ -84,7 +64,8 @@
 	<form id="search">
 		<input type="hidden" name="cx" value="">
 		<input type="hidden" name="ie" value="UTF-8">
-		<input type="text" name="q" class="text" placeholder="Search">
+		<input type="text" name="q" class="text">
+		<input type="submit" value="Search">
 	</form>
 
 	<div id="navigation">
@@ -93,39 +74,42 @@
 				<a href="index.html" title="Overview"><span>Overview</span></a>
 			</li>
 			<li>
-<span>Namespace</span>			</li>
+				<a href="namespace-PHPLegends.Collections.Contracts.html" title="Summary of PHPLegends\Collections\Contracts"><span>Namespace</span></a>
+			</li>
 			<li>
-<span>Class</span>			</li>
+				<a href="class-PHPLegends.Collections.Contracts.Arrayable.html" title="Summary of PHPLegends\Collections\Contracts\Arrayable"><span>Class</span></a>
+			</li>
 		</ul>
 		<ul>
+			<li>
+				<a href="tree.html" title="Tree view of classes, interfaces, traits and exceptions"><span>Tree</span></a>
+			</li>
 		</ul>
 		<ul>
 		</ul>
 	</div>
 
-<pre><code><span id="1" class="l"><a href="#1"> 1: </a><span class="xlang">&lt;?php</span>
-</span><span id="2" class="l"><a href="#2"> 2: </a>
-</span><span id="3" class="l"><a href="#3"> 3: </a><span class="php-keyword1">namespace</span> PHPLegends\Collections\Contracts;
-</span><span id="4" class="l"><a href="#4"> 4: </a>
-</span><span id="5" class="l"><a href="#5"> 5: </a><span class="php-comment">/**
-</span></span><span id="6" class="l"><a href="#6"> 6: </a><span class="php-comment">* Indicates that the class can be transformed into array
-</span></span><span id="7" class="l"><a href="#7"> 7: </a><span class="php-comment"> * @author Wallace de Souza Vizerra &lt;wallacemaxters@gmail.com&gt;
-</span></span><span id="8" class="l"><a href="#8"> 8: </a><span class="php-comment"> * */</span>
-</span><span id="9" class="l"><a href="#9"> 9: </a><span class="php-keyword1">interface</span> Arrayable
-</span><span id="10" class="l"><a href="#10">10: </a>{
-</span><span id="11" class="l"><a href="#11">11: </a>    <span class="php-comment">/**
-</span></span><span id="12" class="l"><a href="#12">12: </a><span class="php-comment">    * @return array
-</span></span><span id="13" class="l"><a href="#13">13: </a><span class="php-comment">    */</span>
-</span><span id="14" class="l"><a href="#14">14: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> toArray();
-</span><span id="15" class="l"><a href="#15">15: </a>}
-</span><span id="16" class="l"><a href="#16">16: </a></span></code></pre>
+<pre><code><span id="1" class="l"><a class="l" href="#1"> 1: </a><span class="xlang">&lt;?php</span>
+</span><span id="2" class="l"><a class="l" href="#2"> 2: </a>
+</span><span id="3" class="l"><a class="l" href="#3"> 3: </a><span class="php-keyword1">namespace</span> PHPLegends\Collections\Contracts;
+</span><span id="4" class="l"><a class="l" href="#4"> 4: </a>
+</span><span id="5" class="l"><a class="l" href="#5"> 5: </a><span class="php-comment">/**
+</span></span><span id="6" class="l"><a class="l" href="#6"> 6: </a><span class="php-comment">* Indicates that the class can be transformed into array
+</span></span><span id="7" class="l"><a class="l" href="#7"> 7: </a><span class="php-comment"> * @author Wallace de Souza Vizerra &lt;wallacemaxters@gmail.com&gt;
+</span></span><span id="8" class="l"><a class="l" href="#8"> 8: </a><span class="php-comment"> * */</span>
+</span><span id="9" class="l"><a class="l" href="#9"> 9: </a><span class="php-keyword1">interface</span> <a id="Arrayable" href="#Arrayable">Arrayable</a>
+</span><span id="10" class="l"><a class="l" href="#10">10: </a>{
+</span><span id="11" class="l"><a class="l" href="#11">11: </a>    <span class="php-comment">/**
+</span></span><span id="12" class="l"><a class="l" href="#12">12: </a><span class="php-comment">    * @return array
+</span></span><span id="13" class="l"><a class="l" href="#13">13: </a><span class="php-comment">    */</span>
+</span><span id="14" class="l"><a class="l" href="#14">14: </a>    <span class="php-keyword1">public</span> <span class="php-keyword1">function</span> <a id="_toArray" href="#_toArray">toArray</a>();
+</span><span id="15" class="l"><a class="l" href="#15">15: </a>}
+</span><span id="16" class="l"><a class="l" href="#16">16: </a></span></code></pre>
 
 	<div id="footer">
-		 API documentation generated by <a href="http://apigen.org">ApiGen</a>
+		 API documentation generated by <a href="http://apigen.org">ApiGen 2.8.0</a>
 	</div>
 </div>
 </div>
-<script src="resources/combined.js?cd021bc814832c24a7cec5319ea03335bfba1caf"></script>
-<script src="elementlist.js?48cd61910464c9518cb6b0fd7381007fd41ed4f3"></script>
 </body>
 </html>
