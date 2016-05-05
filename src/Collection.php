@@ -183,7 +183,7 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
      * */
     public function getOrDefault($key, $default = null)
     {
-        return array_replace($this->all(), [$key => $default])[$key];
+        return array_replace([$key => $default], $this->all())[$key];
     }
 
     /**

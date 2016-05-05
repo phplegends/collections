@@ -324,7 +324,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals(
 			'wallace',
-			$c->get('nome')
+			$c->getOrDefault('nome', 'another')
 		);
 
 		$this->assertEquals(
