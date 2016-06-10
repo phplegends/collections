@@ -3,7 +3,7 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
-* Essentials methods for implementation of collection
+ * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * */
 interface Collectible

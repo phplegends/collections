@@ -3,6 +3,8 @@
 namespace PHPLegends\Collections;
 
 /**
+ * Collection for mathematics operations
+ * 
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 */
 class MathCollection extends Collection
@@ -18,7 +20,7 @@ class MathCollection extends Collection
 			return array_sum($this->all());
 		}
 
-		return $this->reduce(function($result, $value) use($callback)
+		return $this->reduce(function ($result, $value) use ($callback)
 		{
 			return $result + $callback($value);
 			

@@ -5,6 +5,8 @@ namespace PHPLegends\Collections;
 use RecursiveArrayIterator;
 
 /**
+ * Create a recursive Collection basead on multidimensional array
+ * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * 
  * */
@@ -27,6 +29,7 @@ class RecursiveCollection extends Collection
 
     /**
      * Detects if the index passed is a recursive in collection
+     * 
      * @param int|string
      * */
     public function isRecursive($key)
@@ -36,6 +39,7 @@ class RecursiveCollection extends Collection
 
     /**
      * Overwrites the parent method to make a recursive iterator
+     * 
      * @return \RecursiveArrayIterator
      * */
     public function getIterator()
