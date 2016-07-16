@@ -196,7 +196,7 @@ class Collection extends ListCollection implements ArrayAccess
 
         $ascending ? ksort($items) : krsort($items);
 
-        return static::create($items);
+        return new static($items);
     }
 
 
