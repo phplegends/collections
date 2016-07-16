@@ -4,10 +4,9 @@ use PHPLegends\Collections\RecursiveCollection;
 
 class RecursiveCollectionTest extends PHPUnit_Framework_TestCase
 {
-	public function initialize()
+	public function setUp()
 	{
-
-		$data = [
+		$this->arrayData = [
 			'name' => 'Wallace',
 			'age' => '26',
 			'languages' => [
@@ -19,12 +18,13 @@ class RecursiveCollectionTest extends PHPUnit_Framework_TestCase
 			]
 		];
 
-		return new RecursiveCollection($data);
+		$this->recursiveCollection = new RecursiveCollection($this->arrayData);
 	}
 
 	public function testIsRecursive()
 	{
-		$r = $this->initialize();
+			
+		$r = $this->recursiveCollection;
 
 		$this->assertTrue(
 			$r->isRecursive('frameworks')
@@ -44,19 +44,38 @@ class RecursiveCollectionTest extends PHPUnit_Framework_TestCase
 		);
 	}
 
-	public function testVarious()
+	public function testRecursiveArrayIterator()
 	{
-
-		$r = $this->initialize();
-		
-		$this->assertEquals(
-			'sass',
-			$r->get('languages')->last()
-		);
-
-		$this->assertEquals(
-			'php',
-			$r->get('languages')->first()
-		);
+		$this->assertEquals($this->arrayData, iterator_to_array($this->recursiveCollection));	
 	}
-}
+
+	public function testSet()
+	{
+		$r = new RecursiveCollection();
+
+		$r->set('key', 'value');
+
+		$r->set('key.recursive', ['name' => 'wallace']);
+
+		$this->assertTrue($r['key.recursive'] instanceof RecursiveCollection);
+
+		$this->assertTrue($r->isRecursive('key.recursive'));
+
+		$this->assertFalse($r->isRecursive('key'));
+	}
+
+	public function testAdd()
+	{
+		$r = new RecursiveCollection();
+
+		$r->add('single');
+
+		$r->add(['i', 'love', 'you']);
+
+		$this->assertFalse($r->first() instanceof RecursiveCollection);
+
+		$this->assertTrue($r->last() instanceof RecursiveCollection);
+		
+	}
+
+}	
