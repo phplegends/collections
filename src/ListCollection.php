@@ -6,8 +6,6 @@ use Countable;
 use JsonSerializable;
 use IteratorAggregate;
 use PHPLegends\Collections\Contracts\Arrayable;
-use PHPLegends\Collections\Contracts\Modifiable;
-use PHPLegends\Collections\Contracts\Validatable;
 use PHPLegends\Collections\Contracts\Collectible;
 
 /**
@@ -19,13 +17,13 @@ class ListCollection implements
     Collectible,
     Countable,
     IteratorAggregate,
-    JsonSerializable,
-    Modifiable,
-    Validatable
+    JsonSerializable
     
 {
     /**
-    * @var
+     * Items of collection
+     * 
+     * @var
     */
 	protected $items = [];
 

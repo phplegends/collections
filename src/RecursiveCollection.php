@@ -5,6 +5,8 @@ namespace PHPLegends\Collections;
 use RecursiveArrayIterator;
 
 /**
+ * Create a recursive Collection basead on multidimensional array
+ * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * 
  * */

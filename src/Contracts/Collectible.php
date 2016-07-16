@@ -3,16 +3,17 @@
 namespace PHPLegends\Collections\Contracts;
 
 /**
-* Essential methods for implementation of collection
+ * 
  * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
  * */
 interface Collectible
 {
 
     /**
-    * @param mixed $item
+     * The constructor 
+     * 
+    * @param array $item
     */
-
     public function __construct(array $items = []);
 
     /**
@@ -91,5 +92,11 @@ interface Collectible
     * @return $this
     */
     public function unshift($item);
+
+    /**
+     * This Collection is Empty?
+     * @return boolean
+     * */
+    public function isEmpty();
 
 }

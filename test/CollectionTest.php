@@ -28,7 +28,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 		$c1->addAll($c2);
 
 		$this->assertCount(6, $c1);
-
+		
 		$this->assertEquals(
 			[1, 2, 3, 4, 5, 6],
 			$c1->all()
@@ -324,7 +324,7 @@ class CollectionTest extends PHPUnit_Framework_TestCase
 
 		$this->assertEquals(
 			'wallace',
-			$c->get('nome')
+			$c->getOrDefault('nome', 'another')
 		);
 
 		$this->assertEquals(

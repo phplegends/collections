@@ -12,7 +12,7 @@ use PHPLegends\Collections\Contracts\Collectible;
 * @author Wallace de Souza Vizerra <wallacemaxters@gmail.com>
 **/
 
-class Collection extends ListCollection implements ArrayAccess, Accessible
+class Collection extends ListCollection implements ArrayAccess
 {
     /**
     * @param array $items
@@ -113,9 +113,10 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     }
 
     /**
-    * Unset item from collection via index and return value
-    * @param int|string $key
-    * @return mixed
+     * Unset item from collection via index and return value
+     *
+     * @param int|string $key
+     * @return mixed
     */
     public function delete($key)
     {
@@ -147,7 +148,6 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
     */
     public function replace(array $items, $recursive = false)
     {
-
         $func = ($recursive) ? 'array_replace_recursive': 'array_replace';
 
         $this->setItems(
@@ -183,7 +183,7 @@ class Collection extends ListCollection implements ArrayAccess, Accessible
      * */
     public function getOrDefault($key, $default = null)
     {
-        return array_replace($this->all(), [$key => $default])[$key];
+        return array_replace([$key => $default], $this->all())[$key];
     }
 
     /**
