@@ -28,8 +28,27 @@ class CollectionTest extends PHPUnit\Framework\TestCase
     {
         $this->fruits->remove('Maçã');
 
-        $this->assertCount(2, $this->fruits, 'The value expected is 4');
+        $this->assertCount(2, $this->fruits);
     }
+
+    public function testRemoveAll()
+    {
+        $collection = new Collection([
+            'um'   => 1,
+            'one'  => 1,
+            'uno'  => 1,
+            'dois' => 2,
+            'tres' => 3,
+        ]);
+        
+        $this->assertCount(5, $collection);
+
+        $removed = $collection->removeAll(1);
+
+        $this->assertCount(2, $collection);
+    }
+
+
 
     public function testContains()
     {
@@ -184,5 +203,22 @@ class CollectionTest extends PHPUnit\Framework\TestCase
         $collection->set('name', 'Maxters');
 
         $this->assertEquals('Maxters', $collection->get('name'));
+    }
+
+
+
+    public function testSearchall()
+    {
+        $collection = new Collection([
+            'um'   => 1,
+            'one'  => 1,
+            'uno'  => 1,
+            'dois' => 2,
+            'tres' => 3,
+        ]);
+
+        $keys = $collection->searchAll(1);
+        
+        $this->assertCount(3, $keys);
     }
 }

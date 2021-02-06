@@ -66,6 +66,22 @@ class Collection implements Countable, IteratorAggregate, JsonSerializable
     }
 
     /**
+     * Removes all key with the passed value 
+     *
+     * @param mixed $value
+     * @return array
+     */
+    public function removeAll($value): array
+    {
+
+        $keys = $this->searchAll($value);
+        
+        foreach ($keys as $key) unset($this->items[$key]);
+
+        return $keys;
+    }
+
+    /**
      * Checks if collection contains a value
      *
      * @param mixed $value
@@ -326,21 +342,37 @@ class Collection implements Countable, IteratorAggregate, JsonSerializable
      *
      * @return array
      */
-    public function keys() : array
+    public function keys(): array
     {
         return array_keys($this->all());
     }
 
     /**
-     * Search a item by key
+     * Search a key by value
      *
      * @param mixed $key
-     * @return mixed
+     * @return string|int
      */
-    public function search($key)
+    public function search($value)
     {
-        return array_search($key, $this->all(), true);
+        return array_search($value, $this->all(), true);
     }
+
+    
+    /**
+     * Search all keys by value
+     *
+     * @param [type] $value
+     * @return array
+     */
+    public function searchAll($value): array 
+    {
+        return array_keys(array_filter($this->items, function ($item) use($value) {
+            return $item === $value;
+        }));
+    }
+
+
 
     /**
      * Group the collection using callback as criteria
